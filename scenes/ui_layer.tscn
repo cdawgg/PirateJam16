@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqqm8xj6jpria"]
+
+[ext_resource type="Script" path="res://scenes/ui_layer.gd" id="1_tplud"]
+
+[node name="UILayer" type="CanvasLayer"]
+script = ExtResource("1_tplud")
