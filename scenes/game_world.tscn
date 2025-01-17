@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqkq5wtpbm72x"]
+
+[ext_resource type="PackedScene" uid="uid://dvu1jjofnojpc" path="res://player/boulder.tscn" id="1_vslfn"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="Boulder" parent="." instance=ExtResource("1_vslfn")]
+position = Vector2(0, -500)
+
+[node name="Camera2D" type="Camera2D" parent="Boulder"]
+offset = Vector2(350, 50)
+
+[node name="Level" type="Node2D" parent="."]

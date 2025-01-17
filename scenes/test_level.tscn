@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://kkr4v0d00phg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
+size = Vector2(10226.2, 20)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+rotation = 0.359538
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(4718.11, 0.000244141)
+shape = SubResource("RectangleShape2D_1s8du")
