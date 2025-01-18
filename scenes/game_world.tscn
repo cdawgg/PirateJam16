@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqkq5wtpbm72x"]
+[gd_scene load_steps=3 format=3 uid="uid://bqkq5wtpbm72x"]
 
 [ext_resource type="PackedScene" uid="uid://dvu1jjofnojpc" path="res://player/boulder.tscn" id="1_vslfn"]
+[ext_resource type="Script" path="res://objects/camera.gd" id="2_7yaab"]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -9,5 +10,6 @@ position = Vector2(0, -500)
 
 [node name="Camera2D" type="Camera2D" parent="Boulder"]
 offset = Vector2(350, 50)
+script = ExtResource("2_7yaab")
 
 [node name="Level" type="Node2D" parent="."]

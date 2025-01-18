@@ -1,6 +1,25 @@
 extends CanvasLayer
 
-# TODO: Add UI scenes here as children (in editor, don't instantiate)
-# Hide them whenever they're not needed, works faster than removing/re-adding them
+@onready var main_menu: MainMenu = $MainMenu
+@onready var scoreboard: Scoreboard = $Scoreboard
 
-# TODO count enemies left in level. Add enemy
+
+func _ready():
+	main_menu.show()
+	scoreboard.hide()
+
+
+func show_main_menu(show: bool = true):
+	main_menu.visible = show
+
+
+func show_scoreboard(show: bool = true):
+	scoreboard.visible = show
+
+
+func set_enemy_count(count: int):
+	scoreboard.set_enemy_count(count)
+
+
+func set_score(score:int):
+	scoreboard.set_score(score)

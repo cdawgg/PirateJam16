@@ -20,10 +20,3 @@ func reset():
 	
 	for enemy in enemies:
 		enemy.respawn()
-
-
-func get_kill_count() -> int:
-	var count: int = 0
-	for enemy in enemies:
-		if enemy.dead: count += 1
-	return count

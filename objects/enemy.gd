@@ -7,6 +7,8 @@ var dead: bool = false
 func die():
 	hide()
 	dead = true
+	GameState.level_kill_count += 1
+	GameState.shake_camera(0.5)
 
 
 func respawn():
