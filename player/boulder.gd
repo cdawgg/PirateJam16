@@ -4,6 +4,8 @@ extends RigidBody2D
 const MAX_SPEED: float = 1000
 const JUMP_FORCE: float = 1000
 
+@onready var gun: Gun = $Gun
+
 var input_disabled: bool = true
 var on_floor: bool = false
 
@@ -16,7 +18,9 @@ func _input(event):
 	if event.is_action_pressed("restart"): #restart set to R
 		GameState.start_level()
 	if event.is_action_pressed("action"): #action set to E, nothing set here yet
-		fire()
+		pass
+	if event.is_action_pressed("fire_gun"):
+		gun.fire()
 
 
 func _physics_process(delta):
@@ -35,6 +39,15 @@ func _integrate_forces(state: PhysicsDirectBodyState2D):
 		i += 1
 
 
+func enable_gun(enable: bool):
+	gun.visible = enable
+	
+	if enable:
+		gun.process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		gun.process_mode = Node.PROCESS_MODE_DISABLED
+
+
 func disable_input(val: bool = true):
 	input_disabled = val
 
@@ -50,10 +63,6 @@ func jump():
 	if !on_floor: return
 	
 	apply_central_impulse(Vector2.UP * JUMP_FORCE)
-
-
-func fire():
-	print("fire test")
 
 
 func _on_body_entered(_body):

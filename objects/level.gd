@@ -15,8 +15,8 @@ func _ready():
 
 func reset():
 	for obstacle in obstacles:
-		# TODO: Reset obstacle to initial state
-		pass
+		if obstacle is Shootable:
+			obstacle.reset()
 	
 	for enemy in enemies:
 		enemy.respawn()

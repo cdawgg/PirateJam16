@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://hb1dx7dyu6qs"]
+
+[ext_resource type="Script" path="res://objects/shootable.gd" id="1_asops"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdmcp"]
+size = Vector2(244, 174)
+
+[node name="Shootable" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_asops")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gdmcp")
+debug_color = Color(0.992183, 0, 0.255556, 0.42)

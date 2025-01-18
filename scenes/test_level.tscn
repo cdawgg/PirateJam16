@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=10 format=3 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
+[ext_resource type="Script" path="res://objects/test_level/invisibridge.gd" id="2_yabtx"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
+[ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
 size = Vector2(1991.06, 65.1005)
@@ -43,6 +45,18 @@ collision_mask = 0
 position = Vector2(2146.24, 22.5502)
 shape = SubResource("RectangleShape2D_xcae2")
 
+[node name="Floor3" type="StaticBody2D" parent="Terrain"]
+visible = false
+position = Vector2(1366, 540)
+rotation = 0.359538
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_yabtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor3"]
+position = Vector2(600.541, 22.5503)
+shape = SubResource("RectangleShape2D_1s8du")
+
 [node name="DeathZone" parent="Terrain" instance=ExtResource("2_20nuq")]
 position = Vector2(1433, 922)
 
@@ -67,6 +81,9 @@ shape = SubResource("RectangleShape2D_c0y30")
 
 [node name="Obstacles" type="Node" parent="."]
 
+[node name="Shootable" parent="Obstacles" instance=ExtResource("3_i8yxo")]
+position = Vector2(1454, 216)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("3_d7qg0")]
@@ -78,5 +95,8 @@ position = Vector2(2239, 812)
 [node name="Enemy3" parent="Enemies" instance=ExtResource("3_d7qg0")]
 position = Vector2(2316, 844)
 
+[connection signal="was_hit" from="Obstacles/Shootable" to="Terrain/Floor3" method="_on_shootable_was_hit"]
+
 [editable path="Terrain/DeathZone"]
 [editable path="Terrain/DeathZone2"]
+[editable path="Obstacles/Shootable"]
