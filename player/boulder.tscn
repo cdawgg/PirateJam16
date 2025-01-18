@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvu1jjofnojpc"]
 
-[ext_resource type="Texture2D" uid="uid://5fb6x5is14nh" path="res://assets/icon.svg" id="1_6imm1"]
 [ext_resource type="Script" path="res://player/boulder.gd" id="1_lfjyv"]
+[ext_resource type="Texture2D" uid="uid://bh4j4r8i6et5i" path="res://assets/sprites/boulder_blue.png" id="2_3cw1w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t5rw4"]
 bounce = 0.4
@@ -18,7 +18,8 @@ max_contacts_reported = 10
 script = ExtResource("1_lfjyv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6imm1")
+scale = Vector2(5, 5)
+texture = ExtResource("2_3cw1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gqwbh")
