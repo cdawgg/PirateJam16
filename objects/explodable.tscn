@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6gx6hvcpa0g"]
+
+[ext_resource type="Script" path="res://objects/explodable.gd" id="1_4tcv4"]
+
+[node name="Explodable" type="Node2D"]
+script = ExtResource("1_4tcv4")

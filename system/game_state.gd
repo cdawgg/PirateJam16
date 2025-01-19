@@ -18,6 +18,8 @@ var max_kill_count: int = 0 # Potential of enemies killed in previous levels
 ## Upgrades
 var gun_unlocked: bool = true
 
+signal level_started
+
 
 func _ready():
 	game_world = get_tree().root.get_node('GameWorld')
@@ -39,6 +41,7 @@ func load_level(_level_packed: PackedScene):
 
 func restart_level():
 	UILayer.show_death_screen(false)
+	boulder.revive()
 	load_level(level_packed)
 	start_level()
 
@@ -57,6 +60,8 @@ func start_level():
 	boulder.process_mode = Node.PROCESS_MODE_INHERIT
 	boulder.position = level.spawn_point.position
 	boulder.disable_input(false)
+	
+	level_started.emit()
 
 
 func finish_level():

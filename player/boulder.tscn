@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvu1jjofnojpc"]
+[gd_scene load_steps=8 format=3 uid="uid://dvu1jjofnojpc"]
 
 [ext_resource type="Script" path="res://player/boulder.gd" id="1_lfjyv"]
 [ext_resource type="Texture2D" uid="uid://bh4j4r8i6et5i" path="res://assets/sprites/boulder_blue.png" id="2_3cw1w"]
 [ext_resource type="Script" path="res://player/gun.gd" id="3_bart6"]
 [ext_resource type="Texture2D" uid="uid://5fb6x5is14nh" path="res://assets/sprites/icon.svg" id="4_iusco"]
+[ext_resource type="PackedScene" uid="uid://dp6gx6hvcpa0g" path="res://objects/explodable.tscn" id="5_3nlx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t5rw4"]
 bounce = 0.4
@@ -38,5 +39,9 @@ texture = ExtResource("4_iusco")
 position = Vector2(21, 0)
 
 [node name="Timer" type="Timer" parent="Gun"]
+
+[node name="Explodable" parent="." instance=ExtResource("5_3nlx8")]
+textures = Array[Texture2D]([ExtResource("4_iusco")])
+piece_count = 10
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

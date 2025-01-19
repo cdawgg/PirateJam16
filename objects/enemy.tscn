@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnc1dhgwa5uu6"]
+[gd_scene load_steps=8 format=3 uid="uid://cnc1dhgwa5uu6"]
 
 [ext_resource type="Script" path="res://objects/enemy.gd" id="1_0amj3"]
 [ext_resource type="Texture2D" uid="uid://c4o6cmnka2p8t" path="res://assets/sprites/enemy4.png" id="2_e8jvi"]
+[ext_resource type="PackedScene" uid="uid://dp6gx6hvcpa0g" path="res://objects/explodable.tscn" id="3_7msbk"]
+[ext_resource type="Texture2D" uid="uid://blvd2jjqtuaxo" path="res://assets/sprites/enemy1.png" id="4_v0j17"]
+[ext_resource type="Texture2D" uid="uid://cuphxf5q7eapx" path="res://assets/sprites/enemy2.png" id="5_2natw"]
+[ext_resource type="Texture2D" uid="uid://b4s51r6xfafsm" path="res://assets/sprites/enemy3.png" id="6_1ooqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwob"]
 size = Vector2(58, 80)
@@ -17,5 +21,9 @@ shape = SubResource("RectangleShape2D_bgwob")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -40.25)
 texture = ExtResource("2_e8jvi")
+
+[node name="Explodable" parent="." instance=ExtResource("3_7msbk")]
+textures = Array[Texture2D]([ExtResource("4_v0j17"), ExtResource("5_2natw"), ExtResource("6_1ooqc"), ExtResource("2_e8jvi")])
+piece_count = 8
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

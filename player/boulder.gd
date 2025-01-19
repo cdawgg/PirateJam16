@@ -10,8 +10,12 @@ const ACCEL_FORCE: float = 2000
 var input_disabled: bool = true
 
 var on_floor: bool = false
-var max_jumps: int = 1
-var rem_jumps: int = max_jumps
+var floor_grace_timer: Timer
+var floor_grace_ready: bool = true
+const FLOOR_GRACE_PERIOD: float = 0.2
+
+var extra_jumps: int = 1
+var rem_extra_jumps: int = extra_jumps
 var jump_cd: Timer
 var jump_cd_ready: bool = true
 const JUMP_CD_LENGTH: float = 0.3
@@ -21,6 +25,10 @@ func _ready():
 	jump_cd = Timer.new()
 	jump_cd.timeout.connect(_on_jump_cd_timeout)
 	add_child(jump_cd)
+	
+	floor_grace_timer = Timer.new()
+	floor_grace_timer.timeout.connect(_on_floor_grace_timer_timeout)
+	add_child(floor_grace_timer)
 
 
 func _input(event):
@@ -35,6 +43,8 @@ func _input(event):
 		pass
 	if event.is_action_pressed("fire_gun"):
 		gun.fire()
+	if event.is_action_pressed("debug_kill"):
+		die()
 
 
 func _physics_process(delta):
@@ -50,20 +60,27 @@ func _physics_process(delta):
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D):
-	on_floor = false
+	on_floor = check_on_floor(state)
+
+
+func check_on_floor(state: PhysicsDirectBodyState2D) -> bool:
+	if !floor_grace_ready: return true
+	if !jump_cd_ready: return false
 	
-	if jump_cd_ready:
-		var i: int = 0
-		while i < state.get_contact_count():
-			var normal: Vector2 = state.get_contact_local_normal(i)
-			var contact_on_floor: bool = normal.dot(Vector2.UP) > 0.9 # Adjust this to tweak which angle it considers a floor
-			
-			if contact_on_floor:
-				on_floor = true
-				rem_jumps = max_jumps
-				break
-			
-			i += 1
+	var i: int = 0
+	while i < state.get_contact_count():
+		var normal: Vector2 = state.get_contact_local_normal(i)
+		var contact_on_floor: bool = normal.dot(Vector2.UP) > 0.9 # Adjust this to tweak which angle it considers a floor
+		
+		if contact_on_floor:
+			rem_extra_jumps = extra_jumps
+			floor_grace_ready = false
+			floor_grace_timer.start(FLOOR_GRACE_PERIOD)
+			return true
+		
+		i += 1
+	
+	return false
 
 
 func enable_gun(enable: bool):
@@ -87,20 +104,31 @@ func stop_movement():
 
 
 func jump():
-	if rem_jumps <= 0: return
 	if !jump_cd_ready: return
+	
+	if !on_floor:
+		if rem_extra_jumps > 0:
+			rem_extra_jumps -= 1
+		else:
+			return
 	
 	var impulse: Vector2 = -Vector2(0, linear_velocity.y) + Vector2.UP * JUMP_FORCE
 	apply_central_impulse(impulse)
 	jump_cd_ready = false
 	jump_cd.start(JUMP_CD_LENGTH)
-	rem_jumps -= 1
 
 
 func die():
+	hide()
+	set_deferred("freeze", true)
 	disable_input()
 	GameState.freeze_camera()
 	UILayer.show_death_screen()
+
+
+func revive():
+	show()
+	set_deferred("freeze", false)
 
 
 func _on_body_entered(_body):
@@ -111,3 +139,7 @@ func _on_body_entered(_body):
 
 func _on_jump_cd_timeout():
 	jump_cd_ready = true
+
+
+func _on_floor_grace_timer_timeout():
+	floor_grace_ready = true
