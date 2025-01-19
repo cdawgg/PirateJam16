@@ -11,12 +11,3 @@ func _ready():
 	for child in $Enemies.get_children():
 		if child is not Enemy: continue
 		enemies.append(child)
-
-
-func reset():
-	for obstacle in obstacles:
-		if obstacle is Shootable:
-			obstacle.reset()
-	
-	for enemy in enemies:
-		enemy.respawn()

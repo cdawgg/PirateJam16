@@ -3,7 +3,9 @@ extends Node
 var game_world: Node2D
 var boulder: Boulder
 var camera: Camera
+
 var level: Level
+var level_packed: PackedScene
 
 ## Kill counts
 var level_kill_count: int = 0: # Enemies killed in the current run of the level
@@ -23,19 +25,25 @@ func _ready():
 	camera = boulder.get_node('Camera2D')
 
 
-func load_level(level_packed: PackedScene):
+func load_level(_level_packed: PackedScene):
 	var level_holder: Node2D = game_world.get_node('Level')
 	
 	for child in level_holder.get_children():
 		level_holder.remove_child(child)
 	
+	level_packed = _level_packed
 	level = level_packed.instantiate()
 	level_holder.add_child(level)
 	start_level()
 
 
+func restart_level():
+	UILayer.show_death_screen(false)
+	load_level(level_packed)
+	start_level()
+
+
 func start_level():
-	level.reset()
 	level_kill_count = 0
 	UILayer.set_enemy_count(level.enemies.size())
 	

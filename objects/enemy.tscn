@@ -1,23 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnc1dhgwa5uu6"]
 
 [ext_resource type="Script" path="res://objects/enemy.gd" id="1_0amj3"]
-[ext_resource type="Texture2D" uid="uid://5fb6x5is14nh" path="res://assets/sprites/icon.svg" id="1_troyn"]
+[ext_resource type="Texture2D" uid="uid://c4o6cmnka2p8t" path="res://assets/sprites/enemy4.png" id="2_e8jvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwob"]
-size = Vector2(42, 96)
+size = Vector2(58, 80)
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_0amj3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -45)
+position = Vector2(1, -40)
 shape = SubResource("RectangleShape2D_bgwob")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.461017, 0.392737, 1)
-position = Vector2(0, -44.25)
-scale = Vector2(0.3125, 0.746094)
-texture = ExtResource("1_troyn")
+position = Vector2(0, -40.25)
+texture = ExtResource("2_e8jvi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

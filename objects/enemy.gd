@@ -1,7 +1,18 @@
 class_name Enemy
 extends Area2D
 
+const TEXTURES: Array[Texture2D] = [
+	preload("res://assets/sprites/enemy1.png"),
+	preload("res://assets/sprites/enemy2.png"),
+	preload("res://assets/sprites/enemy3.png"),
+	preload("res://assets/sprites/enemy4.png")
+]
+
 var dead: bool = false
+
+
+func _ready():
+	$Sprite2D.texture = TEXTURES.pick_random()
 
 
 func die():

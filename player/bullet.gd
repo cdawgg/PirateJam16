@@ -1,7 +1,7 @@
 class_name Bullet
 extends RigidBody2D
 
-const FORCE: float = 8
+const FORCE: float = 4000
 const MAX_LIFETIME: float = 5
 
 var lifetime: float
@@ -13,7 +13,7 @@ func _physics_process(delta):
 
 
 func fire(target: Vector2, parent_velocity: Vector2):
-	var dir: Vector2 = target - global_position
+	var dir: Vector2 = (target - global_position).normalized()
 	linear_velocity = parent_velocity + (dir * FORCE)
 	lifetime = MAX_LIFETIME
 	look_at(target)

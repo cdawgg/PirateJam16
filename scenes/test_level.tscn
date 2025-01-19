@@ -1,16 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=11 format=3 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
+[ext_resource type="PackedScene" uid="uid://cmb0uyuh5o15j" path="res://objects/terrain.tscn" id="2_lih4g"]
 [ext_resource type="Script" path="res://objects/test_level/invisibridge.gd" id="2_yabtx"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
 [ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35uvy"]
+size = Vector2(4716.45, 160)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
 size = Vector2(1991.06, 65.1005)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcae2"]
-size = Vector2(5082.46, 65.1005)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54cf2"]
 size = Vector2(1520, 20)
@@ -26,24 +27,18 @@ position = Vector2(48, -542)
 
 [node name="Terrain" type="Node" parent="."]
 
-[node name="Floor" type="StaticBody2D" parent="Terrain"]
-rotation = 0.359538
-collision_layer = 2
-collision_mask = 0
+[node name="Floor" parent="Terrain" instance=ExtResource("2_lih4g")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor"]
-position = Vector2(600.541, 22.5503)
-shape = SubResource("RectangleShape2D_1s8du")
+[node name="Floor2" parent="Terrain" instance=ExtResource("2_lih4g")]
+position = Vector2(2507, 936)
 
-[node name="Floor2" type="StaticBody2D" parent="Terrain"]
-position = Vector2(2499, 929)
-rotation = 0.359538
-collision_layer = 2
-collision_mask = 0
+[node name="CollisionShape2D" parent="Terrain/Floor2" index="0"]
+position = Vector2(1963.23, 69.9106)
+shape = SubResource("RectangleShape2D_35uvy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor2"]
-position = Vector2(2146.24, 22.5502)
-shape = SubResource("RectangleShape2D_xcae2")
+[node name="Sprite2D" parent="Terrain/Floor2" index="1"]
+position = Vector2(1963.23, 69.9106)
+region_rect = Rect2(0, 0, 4716.45, 160)
 
 [node name="Floor3" type="StaticBody2D" parent="Terrain"]
 visible = false
@@ -97,6 +92,7 @@ position = Vector2(2316, 844)
 
 [connection signal="was_hit" from="Obstacles/Shootable" to="Terrain/Floor3" method="_on_shootable_was_hit"]
 
+[editable path="Terrain/Floor2"]
 [editable path="Terrain/DeathZone"]
 [editable path="Terrain/DeathZone2"]
 [editable path="Obstacles/Shootable"]
