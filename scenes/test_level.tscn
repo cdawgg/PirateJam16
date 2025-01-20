@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=14 format=3 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://objects/test_level/invisibridge.gd" id="2_yabtx"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
 [ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
-[ext_resource type="PackedScene" uid="uid://c7np5ojormith" path="res://assets/tilemap/tilemap.tscn" id="7_a6eud"]
+[ext_resource type="PackedScene" uid="uid://c7np5ojormith" path="res://assets/tilemap/tilemap1.tscn" id="7_a6eud"]
+[ext_resource type="Script" path="res://scenes/levelendtest.gd" id="8_omaqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35uvy"]
 size = Vector2(4716.45, 160)
@@ -19,6 +20,9 @@ size = Vector2(1520, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0y30"]
 size = Vector2(77, 261)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57by5"]
+size = Vector2(202, 305.5)
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_drve2")
@@ -92,9 +96,28 @@ position = Vector2(2239, 812)
 [node name="Enemy3" parent="Enemies" instance=ExtResource("3_d7qg0")]
 position = Vector2(2316, 844)
 
-[node name="tilemap" parent="." instance=ExtResource("7_a6eud")]
+[node name="tilemap1" parent="." instance=ExtResource("7_a6eud")]
+
+[node name="levelendtest" type="Area2D" parent="."]
+position = Vector2(-639, 241)
+collision_layer = 4
+script = ExtResource("8_omaqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levelendtest"]
+shape = SubResource("RectangleShape2D_57by5")
+debug_color = Color(0.620976, 0.529548, 0.19552, 0.42)
+
+[node name="Label" type="Label" parent="levelendtest"]
+offset_left = -72.0
+offset_top = -59.0
+offset_right = 78.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 40
+text = "End of Level"
+autowrap_mode = 1
 
 [connection signal="was_hit" from="Obstacles/Shootable" to="Terrain/Floor3" method="_on_shootable_was_hit"]
+[connection signal="body_entered" from="levelendtest" to="levelendtest" method="_on_body_entered"]
 
 [editable path="Terrain/Floor2"]
 [editable path="Terrain/DeathZone"]
