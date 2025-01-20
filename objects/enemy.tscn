@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_bgwob")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -40.25)
+scale = Vector2(5, 5)
 texture = ExtResource("2_e8jvi")
 
 [node name="Explodable" parent="." instance=ExtResource("3_7msbk")]
