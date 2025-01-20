@@ -23,7 +23,7 @@ layout_mode = 2
 
 [node name="EnemyCount" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Enemies remaining: 123"
+text = "Enemies on Level: 123"
 horizontal_alignment = 2
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]

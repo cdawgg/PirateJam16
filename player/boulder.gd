@@ -14,7 +14,7 @@ var floor_grace_timer: Timer
 var floor_grace_ready: bool = true
 const FLOOR_GRACE_PERIOD: float = 0.2
 
-var extra_jumps: int = 1
+var extra_jumps: int = 0
 var rem_extra_jumps: int = extra_jumps
 var jump_cd: Timer
 var jump_cd_ready: bool = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=12 format=3 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://objects/test_level/invisibridge.gd" id="2_yabtx"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
 [ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
+[ext_resource type="PackedScene" uid="uid://c7np5ojormith" path="res://assets/tilemap/tilemap.tscn" id="7_a6eud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35uvy"]
 size = Vector2(4716.45, 160)
@@ -28,6 +29,7 @@ position = Vector2(48, -542)
 [node name="Terrain" type="Node" parent="."]
 
 [node name="Floor" parent="Terrain" instance=ExtResource("2_lih4g")]
+position = Vector2(0, 300)
 
 [node name="Floor2" parent="Terrain" instance=ExtResource("2_lih4g")]
 position = Vector2(2507, 936)
@@ -89,6 +91,8 @@ position = Vector2(2239, 812)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("3_d7qg0")]
 position = Vector2(2316, 844)
+
+[node name="tilemap" parent="." instance=ExtResource("7_a6eud")]
 
 [connection signal="was_hit" from="Obstacles/Shootable" to="Terrain/Floor3" method="_on_shootable_was_hit"]
 

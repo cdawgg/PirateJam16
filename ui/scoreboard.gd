@@ -6,7 +6,7 @@ extends VBoxContainer
 
 
 func set_enemy_count(count: int):
-	enemy_count.text = "Enemies remaining: " + str(count)
+	enemy_count.text = "Enemies on Level: " + str(count)
 
 
 func set_score(score: int):
