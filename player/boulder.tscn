@@ -1,17 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvu1jjofnojpc"]
+[gd_scene load_steps=11 format=3 uid="uid://dvu1jjofnojpc"]
 
 [ext_resource type="Script" path="res://player/boulder.gd" id="1_lfjyv"]
-[ext_resource type="Texture2D" uid="uid://de5onqmmr0ktf" path="res://assets/sprites/boudler_blue.png" id="2_nfqwv"]
+[ext_resource type="Texture2D" uid="uid://ci3n0ayrbav4c" path="res://assets/sprites/Player/Boulder_Blue_32.png" id="2_nfqwv"]
 [ext_resource type="Script" path="res://player/gun.gd" id="3_bart6"]
-[ext_resource type="Texture2D" uid="uid://dy556c6xdthor" path="res://assets/sprites/upgrade_cannon.png" id="4_f5loa"]
-[ext_resource type="Texture2D" uid="uid://5fb6x5is14nh" path="res://assets/sprites/icon.svg" id="4_iusco"]
+[ext_resource type="Texture2D" uid="uid://dy556c6xdthor" path="res://assets/sprites/Upgrades/upgrade_cannon.png" id="4_f5loa"]
 [ext_resource type="PackedScene" uid="uid://dp6gx6hvcpa0g" path="res://objects/explodable.tscn" id="5_3nlx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t5rw4"]
 bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gqwbh"]
-radius = 164.003
+radius = 32.1403
 
 [sub_resource type="Animation" id="Animation_i2icq"]
 length = 0.001
@@ -63,17 +62,15 @@ _data = {
 [node name="Boulder" type="RigidBody2D"]
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_t5rw4")
-gravity_scale = 2.0
 contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_lfjyv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(2, 2)
 texture = ExtResource("2_nfqwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_gqwbh")
 
 [node name="Gun" type="Node2D" parent="."]
@@ -82,7 +79,6 @@ script = ExtResource("3_bart6")
 [node name="Sprite2D" type="Sprite2D" parent="Gun"]
 modulate = Color(0.993927, 0.209019, 0.157824, 1)
 rotation = 1.5708
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_f5loa")
 
 [node name="FirePoint" type="Marker2D" parent="Gun"]
@@ -97,7 +93,7 @@ libraries = {
 autoplay = "fire"
 
 [node name="Explodable" parent="." instance=ExtResource("5_3nlx8")]
-textures = Array[Texture2D]([ExtResource("4_iusco")])
+textures = Array[Texture2D]([ExtResource("2_nfqwv")])
 piece_count = 10
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

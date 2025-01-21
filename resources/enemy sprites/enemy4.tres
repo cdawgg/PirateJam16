@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemySprites" load_steps=8 format=3 uid="uid://cakeb7oxli0wt"]
+
+[ext_resource type="Texture2D" uid="uid://c4o6cmnka2p8t" path="res://assets/sprites/Enemies/enemy4.png" id="1_oypwn"]
+[ext_resource type="Script" path="res://objects/enemy_sprites.gd" id="1_qwml6"]
+[ext_resource type="Texture2D" uid="uid://d01hi8aijm8ly" path="res://assets/sprites/Enemies/Enemy4 Parts/boots_enemy4.png" id="2_g2ajn"]
+[ext_resource type="Texture2D" uid="uid://desnaf84jfqgl" path="res://assets/sprites/Enemies/Enemy4 Parts/clothes_bot_enemy4.png" id="3_iy75y"]
+[ext_resource type="Texture2D" uid="uid://cke717hgsuqxv" path="res://assets/sprites/Enemies/Enemy4 Parts/clothes_top_enemy4.png" id="4_kwudy"]
+[ext_resource type="Texture2D" uid="uid://0wmagylxkdlq" path="res://assets/sprites/Enemies/Enemy4 Parts/head_enemy4.png" id="5_r1yt2"]
+[ext_resource type="Texture2D" uid="uid://dano2ef0u4xrv" path="res://assets/sprites/Enemies/Enemy1 Parts/arm_enemy1.png" id="6_f7i73"]
+
+[resource]
+script = ExtResource("1_qwml6")
+full_sprite = ExtResource("1_oypwn")
+part_sprites = Array[Texture2D]([ExtResource("2_g2ajn"), ExtResource("3_iy75y"), ExtResource("4_kwudy"), ExtResource("5_r1yt2"), ExtResource("6_f7i73"), ExtResource("6_f7i73")])

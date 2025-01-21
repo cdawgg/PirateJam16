@@ -8,8 +8,8 @@ friction = 0.0
 bounce = 0.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w6s4"]
-radius = 17.0
-height = 62.0
+radius = 3.0
+height = 10.0
 
 [node name="ExplodablePiece" type="RigidBody2D"]
 collision_layer = 64

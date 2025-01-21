@@ -9,7 +9,8 @@
 position = Vector2(0, -500)
 
 [node name="Camera2D" type="Camera2D" parent="Boulder"]
-offset = Vector2(350, 50)
+offset = Vector2(100, 50)
+zoom = Vector2(2.3, 2.3)
 script = ExtResource("2_7yaab")
 
 [node name="Level" type="Node2D" parent="."]

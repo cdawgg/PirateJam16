@@ -1,25 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=9 format=4 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
-[ext_resource type="PackedScene" uid="uid://cmb0uyuh5o15j" path="res://objects/terrain.tscn" id="2_lih4g"]
-[ext_resource type="Script" path="res://objects/test_level/invisibridge.gd" id="2_yabtx"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
 [ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
-[ext_resource type="PackedScene" uid="uid://c7np5ojormith" path="res://assets/tilemap/tilemap1.tscn" id="7_a6eud"]
+[ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="5_rpkd5"]
 [ext_resource type="Script" path="res://scenes/levelendtest.gd" id="8_omaqb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35uvy"]
-size = Vector2(4716.45, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
-size = Vector2(1991.06, 65.1005)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54cf2"]
 size = Vector2(1520, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0y30"]
-size = Vector2(77, 261)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57by5"]
 size = Vector2(202, 305.5)
@@ -30,33 +19,7 @@ script = ExtResource("1_drve2")
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(48, -542)
 
-[node name="Terrain" type="Node" parent="."]
-
-[node name="Floor" parent="Terrain" instance=ExtResource("2_lih4g")]
-position = Vector2(0, 300)
-
-[node name="Floor2" parent="Terrain" instance=ExtResource("2_lih4g")]
-position = Vector2(2507, 936)
-
-[node name="CollisionShape2D" parent="Terrain/Floor2" index="0"]
-position = Vector2(1963.23, 69.9106)
-shape = SubResource("RectangleShape2D_35uvy")
-
-[node name="Sprite2D" parent="Terrain/Floor2" index="1"]
-position = Vector2(1963.23, 69.9106)
-region_rect = Rect2(0, 0, 4716.45, 160)
-
-[node name="Floor3" type="StaticBody2D" parent="Terrain"]
-visible = false
-position = Vector2(1366, 540)
-rotation = 0.359538
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("2_yabtx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor3"]
-position = Vector2(600.541, 22.5503)
-shape = SubResource("RectangleShape2D_1s8du")
+[node name="Terrain" type="Node2D" parent="."]
 
 [node name="DeathZone" parent="Terrain" instance=ExtResource("2_20nuq")]
 position = Vector2(1433, 922)
@@ -71,21 +34,12 @@ position = Vector2(6902, 2772)
 position = Vector2(462, 0)
 shape = SubResource("RectangleShape2D_54cf2")
 
-[node name="Wall" type="StaticBody2D" parent="Terrain"]
-position = Vector2(4899, 1583)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Wall"]
-position = Vector2(-28.5, 120.5)
-shape = SubResource("RectangleShape2D_c0y30")
-
-[node name="Obstacles" type="Node" parent="."]
+[node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Shootable" parent="Obstacles" instance=ExtResource("3_i8yxo")]
 position = Vector2(1454, 216)
 
-[node name="Enemies" type="Node" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("3_d7qg0")]
 position = Vector2(1371, 502)
@@ -96,7 +50,18 @@ position = Vector2(2239, 812)
 [node name="Enemy3" parent="Enemies" instance=ExtResource("3_d7qg0")]
 position = Vector2(2316, 844)
 
-[node name="tilemap1" parent="." instance=ExtResource("7_a6eud")]
+[node name="tilemap1" type="Node2D" parent="."]
+
+[node name="hazard" type="TileMapLayer" parent="tilemap1"]
+tile_map_data = PackedByteArray("AAAUAAIAAQAAAAAAAAAUAAMAAQAAAAEAAAAUAAQAAQAAAAIAAAAVAAIAAQABAAAAAAAVAAMAAQABAAEAAAAVAAQAAQABAAIAAAAWAAIAAQACAAAAAAAWAAMAAQACAAEAAAAWAAQAAQACAAIAAAAXAAIAAQADAAAAAAAXAAMAAQADAAEAAAAXAAQAAQADAAIAAAAYAAIAAQAAAAAAAAAYAAMAAQAAAAEAAAAYAAQAAQAAAAIAAAAZAAIAAQABAAAAAAAZAAMAAQABAAEAAAAZAAQAAQABAAIAAAAaAAIAAQACAAAAAAAaAAMAAQACAAEAAAAaAAQAAQACAAIAAAAbAAIAAQADAAAAAAAbAAMAAQADAAEAAAAbAAQAAQADAAIAAAAcAAIAAQAAAAAAAAAcAAMAAQAAAAEAAAAcAAQAAQAAAAIAAAAdAAIAAQABAAAAAAAdAAMAAQABAAEAAAAdAAQAAQABAAIAAAAeAAIAAQACAAAAAAAeAAMAAQACAAEAAAAeAAQAAQACAAIAAAAfAAIAAQADAAAAAAAfAAMAAQADAAEAAAAfAAQAAQADAAIAAAAQAAIAAQAAAAAAAAAQAAMAAQAAAAEAAAAQAAQAAQAAAAIAAAARAAIAAQABAAAAAAARAAMAAQABAAEAAAARAAQAAQABAAIAAAASAAIAAQACAAAAAAASAAMAAQACAAEAAAASAAQAAQACAAIAAAATAAIAAQADAAAAAAATAAMAAQADAAEAAAATAAQAAQADAAIAAAANAAIAAQABAAAAAAANAAMAAQABAAEAAAANAAQAAQABAAIAAAAOAAIAAQACAAAAAAAOAAMAAQACAAEAAAAOAAQAAQACAAIAAAAPAAIAAQADAAAAAAAPAAMAAQADAAEAAAAPAAQAAQADAAIAAAA=")
+tile_set = ExtResource("5_rpkd5")
+
+[node name="ground" type="TileMapLayer" parent="tilemap1"]
+tile_map_data = PackedByteArray("AAASAPH/AAAAAAAAAAATAPH/AAAAAAAAAAAUAPH/AAAAAAAAAAAVAPH/AAAAAAAAAAAWAPH/AAAAAAAAAAAXAPH/AAAAAAAAAAAYAPH/AAAAAAAAAAAZAPH/AAAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAEAAAABAAUAAgABAAAAAAABAAYAAgABAAEAAAACAAUAAgACAAAAAAACAAYAAgACAAEAAAADAAYAAgAAAAAAAAADAAcAAgAAAAEAAAAEAAYAAgABAAAAAAAEAAcAAgABAAEAAAAFAAYAAgACAAAAAAAFAAcAAgACAAEAAAAGAAcAAgAAAAAAAAAGAAgAAgAAAAEAAAAHAAcAAgABAAAAAAAHAAgAAgABAAEAAAAIAAcAAgACAAAAAAAIAAgAAgACAAEAAAAJAAgAAgAAAAAAAAAJAAkAAgAAAAEAAAAKAAgAAgABAAAAAAAKAAkAAgABAAEAAAALAAgAAgACAAAAAAALAAkAAgACAAEAAAAMAAkAAgAAAAAAAAAMAAoAAgAAAAEAAAANAAkAAgABAAAAAAANAAoAAgABAAEAAAAOAAkAAgACAAAAAAAOAAoAAgACAAEAAAAPAAoAAgAAAAAAAAAPAAsAAgAAAAEAAAAQAAoAAgABAAAAAAAQAAsAAgABAAEAAAARAAoAAgACAAAAAAARAAsAAgACAAEAAAASAAsAAgAAAAAAAAASAAwAAgAAAAEAAAATAAsAAgABAAAAAAATAAwAAgABAAEAAAAUAAsAAgACAAAAAAAUAAwAAgACAAEAAAAVAAwAAgAAAAAAAAAVAA0AAgAAAAEAAAAWAAwAAgABAAAAAAAWAA0AAgABAAEAAAAXAAwAAgACAAAAAAAXAA0AAgACAAEAAAAYAA0AAgAAAAAAAAAYAA4AAgAAAAEAAAAZAA0AAgABAAAAAAAZAA4AAgABAAEAAAAaAA0AAgACAAAAAAAaAA4AAgACAAEAAAAbAA4AAgAAAAAAAAAbAA8AAgAAAAEAAAAcAA4AAgABAAAAAAAcAA8AAgABAAEAAAAdAA4AAgACAAAAAAAdAA8AAgACAAEAAAAqABAAAAAAAAAAAAArABAAAAAAAAAAAAAeAA8AAAAAAAAAAAAfAA8AAAAAAAAAAAAgAA8AAAAAAAAAAAAhAA8AAAAAAAAAAAAiAA8AAAAAAAAAAAAjAA8AAAAAAAAAAAAkAA8AAAAAAAAAAAAlAA8AAAAAAAAAAAAmAA8AAAAAAAAAAAAnAA8AAAAAAAAAAAAsABAAAgAAAAAAAAAsABEAAgAAAAEAAAAtABAAAgABAAAAAAAtABEAAgABAAEAAAAuABAAAgACAAAAAAAuABEAAgACAAEAAAAvABEAAgAAAAAAAAAvABIAAgAAAAEAAAAwABEAAgABAAAAAAAwABIAAgABAAEAAAAxABEAAgACAAAAAAAxABIAAgACAAEAAAAyABIAAgAAAAAAAAAyABMAAgAAAAEAAAAzABIAAgABAAAAAAAzABMAAgABAAEAAAA0ABIAAgACAAAAAAA0ABMAAgACAAEAAAA4ABUAAgAAAAAAAAA4ABYAAgAAAAEAAAA5ABUAAgABAAAAAAA5ABYAAgABAAEAAAA6ABUAAgACAAAAAAA6ABYAAgACAAEAAAA7ABYAAgAAAAAAAAA7ABcAAgAAAAEAAAA8ABYAAgABAAAAAAA8ABcAAgABAAEAAAA9ABYAAgACAAAAAAA9ABcAAgACAAEAAAA+ABcAAgAAAAAAAAA+ABgAAgAAAAEAAAA/ABcAAgABAAAAAAA/ABgAAgABAAEAAABAABcAAgACAAAAAABAABgAAgACAAEAAABBABgAAgAAAAAAAABBABkAAgAAAAEAAABCABgAAgABAAAAAABCABkAAgABAAEAAABDABgAAgACAAAAAABDABkAAgACAAEAAABEABkAAgAAAAAAAABEABoAAgAAAAEAAABFABkAAgABAAAAAABFABoAAgABAAEAAABGABkAAgACAAAAAABGABoAAgACAAEAAABHABoAAgAAAAAAAABHABsAAgAAAAEAAABIABoAAgABAAAAAABIABsAAgABAAEAAABJABoAAgACAAAAAABJABsAAgACAAEAAAA=")
+tile_set = ExtResource("5_rpkd5")
+
+[node name="objects" type="TileMapLayer" parent="tilemap1"]
+tile_set = ExtResource("5_rpkd5")
 
 [node name="levelendtest" type="Area2D" parent="."]
 position = Vector2(-639, 241)
@@ -116,10 +81,8 @@ theme_override_font_sizes/font_size = 40
 text = "End of Level"
 autowrap_mode = 1
 
-[connection signal="was_hit" from="Obstacles/Shootable" to="Terrain/Floor3" method="_on_shootable_was_hit"]
 [connection signal="body_entered" from="levelendtest" to="levelendtest" method="_on_body_entered"]
 
-[editable path="Terrain/Floor2"]
 [editable path="Terrain/DeathZone"]
 [editable path="Terrain/DeathZone2"]
 [editable path="Obstacles/Shootable"]

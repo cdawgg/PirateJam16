@@ -1,18 +1,19 @@
 class_name Enemy
 extends Area2D
 
-const TEXTURES: Array[Texture2D] = [
-	preload("res://assets/sprites/enemy1.png"),
-	preload("res://assets/sprites/enemy2.png"),
-	preload("res://assets/sprites/enemy3.png"),
-	preload("res://assets/sprites/enemy4.png")
-]
+@onready var explodable: Explodable = $Explodable
+
+@export var sprites: Array[EnemySprites]
+var curr_sprites: EnemySprites
 
 var dead: bool = false
 
 
 func _ready():
-	$Sprite2D.texture = TEXTURES.pick_random()
+	curr_sprites = sprites.pick_random()
+	$Sprite2D.texture = curr_sprites.full_sprite
+	explodable.textures = curr_sprites.part_sprites
+	explodable.piece_count = curr_sprites.part_sprites.size()
 
 
 func die():

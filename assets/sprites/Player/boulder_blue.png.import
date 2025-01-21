@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh4j4r8i6et5i"
-path="res://.godot/imported/boulder_blue.png-7fb8828c7e13ba0cee852f6e931507ed.ctex"
+path="res://.godot/imported/boulder_blue.png-d03dd93836f7b5bc07410b377a44328d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/boulder_blue.png"
-dest_files=["res://.godot/imported/boulder_blue.png-7fb8828c7e13ba0cee852f6e931507ed.ctex"]
+source_file="res://assets/sprites/Player/boulder_blue.png"
+dest_files=["res://.godot/imported/boulder_blue.png-d03dd93836f7b5bc07410b377a44328d.ctex"]
 
 [params]
 

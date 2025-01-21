@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciiley2nx0jin"]
+
+[ext_resource type="Script" path="res://system/sound_player.gd" id="1_xnodb"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_xnodb")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioPlayers2D" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="AudioPlayers2D"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]

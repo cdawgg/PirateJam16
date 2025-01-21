@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwow34364ifv"
-path="res://.godot/imported/Boulder_red.png-781bc1651273879e1170daa21d61e325.ctex"
+uid="uid://w28y20g82icl"
+path="res://.godot/imported/Groundtxtr_slope_ext.png-55b7633f612437f27e3e93e081fc02f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/Boulder_red.png"
-dest_files=["res://.godot/imported/Boulder_red.png-781bc1651273879e1170daa21d61e325.ctex"]
+source_file="res://assets/sprites/Terrain/Groundtxtr_slope_ext.png"
+dest_files=["res://.godot/imported/Groundtxtr_slope_ext.png-55b7633f612437f27e3e93e081fc02f5.ctex"]
 
 [params]
 

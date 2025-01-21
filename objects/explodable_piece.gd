@@ -1,7 +1,7 @@
 class_name ExplodablePiece
 extends RigidBody2D
 
-const LIN_FORCE: float = 1500
+const LIN_FORCE: float = 700
 const ROT_FORCE: float = 5
 const LIFETIME: float = 5
 const FADE_THRESHOLD: float = 1

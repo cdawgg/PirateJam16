@@ -1,9 +1,9 @@
 class_name Boulder
 extends RigidBody2D
 
-const MAX_SPEED: float = 1000
-const JUMP_FORCE: float = 1000
-const ACCEL_FORCE: float = 2000
+const MAX_SPEED: float = 400
+const JUMP_FORCE: float = 400
+const ACCEL_FORCE: float = 500
 
 @onready var gun: Gun = $Gun
 
