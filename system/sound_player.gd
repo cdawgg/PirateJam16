@@ -12,13 +12,13 @@ var music_position: float = 0
 func play_sound(sound: AudioStream, volume: float = 0) -> AudioStreamPlayer:
 	for audio_player in audio_players.get_children():
 		if audio_player.playing: continue
-
+		
 		reset_sfx_player(audio_player)
 		audio_player.stream = sound
 		audio_player.volume_db = volume
 		audio_player.play()
 		return audio_player
-
+	
 	return null
 
 
