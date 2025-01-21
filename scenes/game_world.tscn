@@ -5,12 +5,12 @@
 
 [node name="GameWorld" type="Node2D"]
 
-[node name="Boulder" parent="." instance=ExtResource("1_vslfn")]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -500)
-
-[node name="Camera2D" type="Camera2D" parent="Boulder"]
-offset = Vector2(100, 50)
 zoom = Vector2(2.3, 2.3)
 script = ExtResource("2_7yaab")
+
+[node name="Boulder" parent="." instance=ExtResource("1_vslfn")]
+position = Vector2(0, -500)
 
 [node name="Level" type="Node2D" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cru1tr6m05yaf" path="res://assets/sprites/Upgrades/cannon_lazer.png" id="2_81ws4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bghcp"]
-size = Vector2(24, 12)
+size = Vector2(12, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmrr4"]
 size = Vector2(24, 12)
@@ -18,11 +18,9 @@ script = ExtResource("1_65vg4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(2, 2)
 texture = ExtResource("2_81ws4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_bghcp")
 
 [node name="Hitbox" type="Area2D" parent="."]

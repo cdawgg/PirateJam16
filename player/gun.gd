@@ -14,7 +14,7 @@ var on_cooldown: bool = false
 func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 
-func _process(delta):
+func _physics_process(_delta):
 	look_at(get_global_mouse_position()) #always look at mouse otherwise gun spins with player
 
 func fire():
