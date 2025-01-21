@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr7sj0uun4y2k"]
 
 [ext_resource type="Script" path="res://player/bullet.gd" id="1_65vg4"]
-[ext_resource type="Texture2D" uid="uid://cru1tr6m05yaf" path="res://assets/sprites/cannon_lazer.png" id="2_81ws4"]
+[ext_resource type="Texture2D" uid="uid://cru1tr6m05yaf" path="res://assets/sprites/Upgrades/cannon_lazer.png" id="2_81ws4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bghcp"]
 size = Vector2(24, 12)

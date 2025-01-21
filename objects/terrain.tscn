@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmb0uyuh5o15j"]
 
 [ext_resource type="Script" path="res://objects/terrain.gd" id="1_qm7e3"]
-[ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Groundtxtr_Flat.png" id="2_g4ayf"]
+[ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Terrain/Groundtxtr_Flat.png" id="2_g4ayf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
 size = Vector2(1856.76, 160)

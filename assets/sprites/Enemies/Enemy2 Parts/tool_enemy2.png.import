@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwow34364ifv"
-path="res://.godot/imported/Boulder_red.png-781bc1651273879e1170daa21d61e325.ctex"
+uid="uid://c02oq0fwxn18u"
+path="res://.godot/imported/tool_enemy2.png-b49f68cb17d8a9ff70655d634e523fd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/Boulder_red.png"
-dest_files=["res://.godot/imported/Boulder_red.png-781bc1651273879e1170daa21d61e325.ctex"]
+source_file="res://assets/sprites/Enemies/Enemy2 Parts/tool_enemy2.png"
+dest_files=["res://.godot/imported/tool_enemy2.png-b49f68cb17d8a9ff70655d634e523fd0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cru1tr6m05yaf"
-path="res://.godot/imported/cannon_lazer.png-cc68fcca82131039d81e50315c724b68.ctex"
+path="res://.godot/imported/cannon_lazer.png-8288d63187913736ad97c5e4eb7adbea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cannon_lazer.png"
-dest_files=["res://.godot/imported/cannon_lazer.png-cc68fcca82131039d81e50315c724b68.ctex"]
+source_file="res://assets/sprites/Upgrades/cannon_lazer.png"
+dest_files=["res://.godot/imported/cannon_lazer.png-8288d63187913736ad97c5e4eb7adbea.ctex"]
 
 [params]
 

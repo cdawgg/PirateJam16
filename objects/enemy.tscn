@@ -1,26 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnc1dhgwa5uu6"]
+[gd_scene load_steps=13 format=3 uid="uid://cnc1dhgwa5uu6"]
 
 [ext_resource type="Script" path="res://objects/enemy.gd" id="1_0amj3"]
-[ext_resource type="Texture2D" uid="uid://c4o6cmnka2p8t" path="res://assets/sprites/enemy4.png" id="2_e8jvi"]
+[ext_resource type="Script" path="res://objects/enemy_sprites.gd" id="2_e4rrw"]
+[ext_resource type="Texture2D" uid="uid://c4o6cmnka2p8t" path="res://assets/sprites/Enemies/enemy4.png" id="2_e8jvi"]
+[ext_resource type="Resource" uid="uid://kylqu0whkwtc" path="res://resources/enemy sprites/enemy1.tres" id="3_3feq7"]
 [ext_resource type="PackedScene" uid="uid://dp6gx6hvcpa0g" path="res://objects/explodable.tscn" id="3_7msbk"]
-[ext_resource type="Texture2D" uid="uid://blvd2jjqtuaxo" path="res://assets/sprites/enemy1.png" id="4_v0j17"]
-[ext_resource type="Texture2D" uid="uid://cuphxf5q7eapx" path="res://assets/sprites/enemy2.png" id="5_2natw"]
-[ext_resource type="Texture2D" uid="uid://b4s51r6xfafsm" path="res://assets/sprites/enemy3.png" id="6_1ooqc"]
+[ext_resource type="Resource" uid="uid://c21toajubf0cr" path="res://resources/enemy sprites/enemy2.tres" id="4_ilyhb"]
+[ext_resource type="Texture2D" uid="uid://blvd2jjqtuaxo" path="res://assets/sprites/Enemies/enemy1.png" id="4_v0j17"]
+[ext_resource type="Resource" uid="uid://bbs52573hesyx" path="res://resources/enemy sprites/enemy3.tres" id="5_0u5al"]
+[ext_resource type="Texture2D" uid="uid://cuphxf5q7eapx" path="res://assets/sprites/Enemies/enemy2.png" id="5_2natw"]
+[ext_resource type="Texture2D" uid="uid://b4s51r6xfafsm" path="res://assets/sprites/Enemies/enemy3.png" id="6_1ooqc"]
+[ext_resource type="Resource" uid="uid://cakeb7oxli0wt" path="res://resources/enemy sprites/enemy4.tres" id="6_5qy4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwob"]
-size = Vector2(58, 80)
+size = Vector2(10, 14)
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_0amj3")
+sprites = Array[ExtResource("2_e4rrw")]([ExtResource("3_3feq7"), ExtResource("4_ilyhb"), ExtResource("5_0u5al"), ExtResource("6_5qy4i")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -40)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_bgwob")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -40.25)
-scale = Vector2(5, 5)
+position = Vector2(0, -8)
 texture = ExtResource("2_e8jvi")
 
 [node name="Explodable" parent="." instance=ExtResource("3_7msbk")]

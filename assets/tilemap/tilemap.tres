@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://coj8vy6uq4ua3"]
 
-[ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Groundtxtr_Flat.png" id="1_mvji1"]
+[ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Terrain/Groundtxtr_Flat.png" id="1_mvji1"]
 [ext_resource type="Texture2D" uid="uid://d0dfdq4tb2o5y" path="res://assets/sprites/spikes_v1.png" id="2_guil6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g746"]
