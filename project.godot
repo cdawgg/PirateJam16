@@ -19,6 +19,7 @@ config/icon="res://assets/sprites/icon.svg"
 
 GameState="*res://system/game_state.gd"
 UILayer="*res://scenes/ui_layer.tscn"
+SoundPlayer="*res://system/sound_player.tscn"
 
 [gui]
 
