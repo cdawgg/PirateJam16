@@ -1,32 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://csdkqy3bcj2y3"]
+[gd_scene load_steps=4 format=3 uid="uid://csdkqy3bcj2y3"]
 
 [ext_resource type="Theme" uid="uid://jbxh772s8h6f" path="res://assets/UI/theme_style.tres" id="1_27lrt"]
 [ext_resource type="Script" path="res://ui/scoreboard.gd" id="2_rdkp5"]
+[ext_resource type="Texture2D" uid="uid://cfbgwmlss8n17" path="res://assets/sprites/Enemies/Enemy2 Parts/skull_enemy2.png" id="3_mw5ii"]
 
-[node name="Scoreboard" type="VBoxContainer"]
-anchors_preset = 1
-anchor_left = 1.0
+[node name="Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -184.0
-offset_bottom = 108.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_27lrt")
 script = ExtResource("2_rdkp5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 33.0
+grow_horizontal = 0
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="EnemyCount" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Enemies on Level: 123"
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 40
+text = "99 / 99"
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Total Body Count: 123"
-horizontal_alignment = 2
+texture = ExtResource("3_mw5ii")
+expand_mode = 2
+stretch_mode = 5

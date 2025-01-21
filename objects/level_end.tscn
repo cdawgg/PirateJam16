@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dywqhg6ma8r2x"]
+
+[ext_resource type="Script" path="res://objects/level_end.gd" id="1_58ter"]
+[ext_resource type="Texture2D" uid="uid://bh510oryrbp38" path="res://assets/sprites/Player/Boulder_Red_32.png" id="2_16hrx"]
+[ext_resource type="Script" path="res://objects/explodable.gd" id="3_xce4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57by5"]
+size = Vector2(202, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0sa"]
+size = Vector2(32, 32)
+
+[node name="LevelEnd" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_58ter")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -152)
+shape = SubResource("RectangleShape2D_57by5")
+debug_color = Color(0.620976, 0.529548, 0.19552, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -186.0
+offset_right = 74.0
+offset_bottom = -58.0
+theme_override_font_sizes/font_size = 40
+text = "End of Level"
+autowrap_mode = 1
+
+[node name="Guy" type="Area2D" parent="."]
+position = Vector2(500, -16)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guy"]
+shape = SubResource("RectangleShape2D_2f0sa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guy"]
+texture = ExtResource("2_16hrx")
+
+[node name="Explodable" type="Node2D" parent="Guy"]
+script = ExtResource("3_xce4h")
+textures = Array[Texture2D]([ExtResource("2_16hrx")])
+piece_count = 8
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Guy" to="." method="_on_guy_body_entered"]

@@ -82,7 +82,7 @@ rotation = 1.5708
 texture = ExtResource("4_f5loa")
 
 [node name="FirePoint" type="Marker2D" parent="Gun"]
-position = Vector2(75, 0)
+position = Vector2(24, 0)
 
 [node name="Timer" type="Timer" parent="Gun"]
 
