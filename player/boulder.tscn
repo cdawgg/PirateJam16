@@ -71,6 +71,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_nfqwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_gqwbh")
 
 [node name="Gun" type="Node2D" parent="."]
@@ -79,6 +80,7 @@ script = ExtResource("3_bart6")
 [node name="Sprite2D" type="Sprite2D" parent="Gun"]
 modulate = Color(0.993927, 0.209019, 0.157824, 1)
 rotation = 1.5708
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_f5loa")
 
 [node name="FirePoint" type="Marker2D" parent="Gun"]
