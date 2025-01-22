@@ -19,12 +19,9 @@ func show_scoreboard(show: bool = true):
 	scoreboard.visible = show
 
 
-func set_enemy_count(count: int):
-	scoreboard.set_enemy_count(count)
-
-
-func set_score(score:int):
-	scoreboard.set_score(score)
+func set_score(kill_count: int, enemy_count: int):
+	scoreboard.kill_count = kill_count
+	scoreboard.enemy_count = enemy_count
 
 
 func show_death_screen(show: bool = true):
