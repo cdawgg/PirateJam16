@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2iwfvnwdeu7e"]
+
+[ext_resource type="Theme" uid="uid://jbxh772s8h6f" path="res://assets/UI/theme_style.tres" id="1_8gxkg"]
+[ext_resource type="Script" path="res://ui/level_end_screen.gd" id="2_n5dmi"]
+
+[node name="LevelEndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8gxkg")
+script = ExtResource("2_n5dmi")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level finished!"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="EnemyLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Enemies slain:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EnemyScoreLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[right]99 / 99"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="KillLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Total kill count:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="KillCountLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[right]99"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Retry"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next level"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

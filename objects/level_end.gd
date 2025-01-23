@@ -36,4 +36,4 @@ func _on_guy_body_entered(body):
 		wait_timer.start(WAIT_TIME)
 		await wait_timer.timeout
 		
-		# TODO: Show level end screen
+		UILayer.show_level_end_screen()

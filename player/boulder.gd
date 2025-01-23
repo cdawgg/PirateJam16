@@ -122,7 +122,7 @@ func die():
 	hide()
 	set_deferred("freeze", true)
 	disable_input()
-	GameState.freeze_camera()
+	GameState.camera.freeze()
 	UILayer.show_death_screen()
 
 
