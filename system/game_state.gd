@@ -4,8 +4,12 @@ var game_world: Node2D
 var boulder: Boulder
 var camera: Camera
 
+@onready var levels: Array[PackedScene] = [
+	preload('res://scenes/test_level.tscn'),
+	preload('res://scenes/level1.tscn'),
+]
+var curr_level_index: int = 0
 var level: Level
-var level_packed: PackedScene
 
 ## Kill counts
 var level_kill_count: int = 0: # Enemies killed in the current run of the level
@@ -27,22 +31,32 @@ func _ready():
 	camera = game_world.get_node('Camera2D')
 
 
-func load_level(_level_packed: PackedScene):
+func load_level(i: int):
 	var level_holder: Node2D = game_world.get_node('Level')
 	
 	for child in level_holder.get_children():
 		level_holder.remove_child(child)
 	
-	level_packed = _level_packed
-	level = level_packed.instantiate()
+	curr_level_index = i
+	level = levels[i].instantiate()
 	level_holder.add_child(level)
 	start_level()
+
+
+func load_next_level():
+	finish_level()
+	
+	if curr_level_index >= levels.size():
+		# TODO: Show end screen
+		return
+	
+	load_level(curr_level_index + 1)
 
 
 func restart_level():
 	UILayer.show_death_screen(false)
 	boulder.revive()
-	load_level(level_packed)
+	load_level(curr_level_index)
 	start_level()
 
 

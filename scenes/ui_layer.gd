@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var main_menu: MainMenu = $MainMenu
 @onready var scoreboard: Scoreboard = $Scoreboard
 @onready var death_screen: Control = $DeathScreen
+@onready var level_end_screen: LevelEndScreen = $LevelEndScreen
 
 
 func _ready():
@@ -26,3 +27,7 @@ func set_score(kill_count: int, enemy_count: int):
 
 func show_death_screen(show: bool = true):
 	death_screen.visible = show
+
+
+func show_level_end_screen(show: bool = true):
+	level_end_screen.visible = show

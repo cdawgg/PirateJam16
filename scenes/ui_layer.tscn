@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqqm8xj6jpria"]
+[gd_scene load_steps=7 format=3 uid="uid://bqqm8xj6jpria"]
 
 [ext_resource type="Script" path="res://scenes/ui_layer.gd" id="1_tplud"]
 [ext_resource type="PackedScene" uid="uid://csdkqy3bcj2y3" path="res://ui/scoreboard.tscn" id="2_a2o45"]
 [ext_resource type="PackedScene" uid="uid://b8tgpo5fupjiw" path="res://ui/main_menu.tscn" id="3_tc1fe"]
 [ext_resource type="PackedScene" uid="uid://chdkg2yoebc7f" path="res://ui/death_screen.tscn" id="4_tqgvh"]
 [ext_resource type="PackedScene" uid="uid://b4gsjorkhc21k" path="res://ui/level_complete.tscn" id="5_bafl7"]
+[ext_resource type="PackedScene" uid="uid://c2iwfvnwdeu7e" path="res://ui/level_end_screen.tscn" id="6_tvp4r"]
 
 [node name="UILayer" type="CanvasLayer"]
 script = ExtResource("1_tplud")
@@ -16,5 +17,10 @@ visible = false
 visible = false
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_tqgvh")]
+visible = false
 
 [node name="LevelComplete" parent="." instance=ExtResource("5_bafl7")]
+visible = false
+
+[node name="LevelEndScreen" parent="." instance=ExtResource("6_tvp4r")]
+visible = false

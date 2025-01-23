@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=4 uid="uid://b01ishn1porxi"]
+[gd_scene load_steps=4 format=4 uid="uid://b01ishn1porxi"]
 
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="1_8p3jf"]
+[ext_resource type="Script" path="res://objects/level.gd" id="1_g20np"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="2_f06ut"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_g20np")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(48, -542)
@@ -21,6 +23,8 @@ tile_set = ExtResource("1_8p3jf")
 [node name="Objects" type="TileMapLayer" parent="TileMap"]
 tile_set = ExtResource("1_8p3jf")
 
-[node name="Enemy" parent="." instance=ExtResource("2_f06ut")]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_f06ut")]
 position = Vector2(1440, 427)
 rotation = -1.5708
