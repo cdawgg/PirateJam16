@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/death_zone.gd" id="1_a1lr8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_46jkp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_favrg"]
 size = Vector2(2615.5, 84)
 
 [node name="DeathZone" type="Area2D"]
@@ -10,7 +10,7 @@ collision_layer = 4
 script = ExtResource("1_a1lr8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_46jkp")
+shape = SubResource("RectangleShape2D_favrg")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
