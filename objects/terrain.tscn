@@ -4,22 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Terrain/Groundtxtr_Flat.png" id="2_g4ayf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s8du"]
-size = Vector2(1856.76, 160)
+size = Vector2(150, 20)
 
 [node name="Floor" type="StaticBody2D"]
-rotation = 0.359538
+visible = false
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_qm7e3")
 texture = ExtResource("2_g4ayf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(600.541, 69.9107)
 shape = SubResource("RectangleShape2D_1s8du")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(600.541, 69.9107)
 texture = ExtResource("2_g4ayf")
 region_enabled = true
-region_rect = Rect2(0, 0, 1856.76, 160)
+region_rect = Rect2(0, 0, 150, 20)
