@@ -1,17 +1,11 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://coj8vy6uq4ua3"]
-
-[ext_resource type="Texture2D" uid="uid://cw2pad4pgh8g5" path="res://assets/sprites/Terrain/Groundtxtr_Flat.png" id="1_mvji1"]
-[ext_resource type="Texture2D" uid="uid://d0dfdq4tb2o5y" path="res://assets/sprites/spikes_v1.png" id="2_guil6"]
-[ext_resource type="Texture2D" uid="uid://w28y20g82icl" path="res://assets/sprites/Terrain/Groundtxtr_slope_ext.png" id="3_dgiln"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://coj8vy6uq4ua3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g746"]
-texture = ExtResource("1_mvji1")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pru8r"]
-texture = ExtResource("2_guil6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -39,7 +33,6 @@ texture_region_size = Vector2i(32, 32)
 3:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkhe7"]
-texture = ExtResource("3_dgiln")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -5.25, 16, 16, -16, 16)
