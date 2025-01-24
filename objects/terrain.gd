@@ -19,3 +19,5 @@ func _process(_delta):
 		sprite.texture = texture
 		sprite.position = shape.position
 		sprite.region_rect = Rect2(Vector2.ZERO, shape.shape.size)
+
+#TODO get from shootable
