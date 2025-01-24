@@ -46,7 +46,7 @@ func load_level(i: int):
 func load_next_level():
 	finish_level()
 	
-	if curr_level_index >= levels.size():
+	if curr_level_index >= levels.size() - 1:
 		# TODO: Show end screen
 		return
 	

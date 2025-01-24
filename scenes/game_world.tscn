@@ -10,53 +10,62 @@
 
 [node name="GameWorld" type="Node2D"]
 
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax"]
+scroll_scale = Vector2(0.1, 0.01)
+scroll_offset = Vector2(0, 150)
+repeat_size = Vector2(480, 0)
+repeat_times = 4
+
+[node name="sky" type="Sprite2D" parent="Parallax/Parallax2D"]
+texture = ExtResource("3_f6m4s")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="Parallax"]
+scroll_scale = Vector2(0.2, 0.02)
+scroll_offset = Vector2(0, 250)
+repeat_size = Vector2(480, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Parallax2D5"]
+texture = ExtResource("6_2pqgh")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallax"]
+scroll_scale = Vector2(0.3, 0.03)
+scroll_offset = Vector2(0, 250)
+repeat_size = Vector2(480, 0)
+repeat_times = 4
+
+[node name="Clouds" type="Sprite2D" parent="Parallax/Parallax2D4"]
+texture = ExtResource("5_a4jyg")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallax"]
+scroll_scale = Vector2(0.4, 0.04)
+scroll_offset = Vector2(0, 370)
+repeat_size = Vector2(480, 0)
+repeat_times = 4
+
+[node name="grass" type="Sprite2D" parent="Parallax/Parallax2D3"]
+texture = ExtResource("4_e4itn")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax"]
+scroll_scale = Vector2(0.5, 0.05)
+scroll_offset = Vector2(0, 450)
+repeat_size = Vector2(480, 0)
+repeat_times = 4
+
+[node name="dirt" type="Sprite2D" parent="Parallax/Parallax2D2"]
+texture = ExtResource("3_oy4qs")
+centered = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -500)
-zoom = Vector2(2.3, 2.3)
+zoom = Vector2(2, 2)
 script = ExtResource("2_7yaab")
-
-[node name="Parallax" type="Node2D" parent="Camera2D"]
-position = Vector2(-225, 0)
-
-[node name="Parallax2D" type="Parallax2D" parent="Camera2D/Parallax"]
-z_index = -1
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(480, 0)
-
-[node name="sky" type="Sprite2D" parent="Camera2D/Parallax/Parallax2D"]
-texture = ExtResource("3_f6m4s")
-
-[node name="Parallax2D2" type="Parallax2D" parent="Camera2D/Parallax"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(0, 200)
-repeat_size = Vector2(480, 0)
-
-[node name="dirt" type="Sprite2D" parent="Camera2D/Parallax/Parallax2D2"]
-z_index = 1
-texture = ExtResource("3_oy4qs")
-
-[node name="Parallax2D3" type="Parallax2D" parent="Camera2D/Parallax"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(0, 160)
-repeat_size = Vector2(480, 0)
-
-[node name="grass" type="Sprite2D" parent="Camera2D/Parallax/Parallax2D3"]
-texture = ExtResource("4_e4itn")
-
-[node name="Parallax2D4" type="Parallax2D" parent="Camera2D/Parallax"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(0, -120)
-repeat_size = Vector2(480, 0)
-
-[node name="Clouds" type="Sprite2D" parent="Camera2D/Parallax/Parallax2D4"]
-texture = ExtResource("5_a4jyg")
-
-[node name="Parallax2D5" type="Parallax2D" parent="Camera2D/Parallax"]
-z_index = -1
-repeat_size = Vector2(480, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Parallax/Parallax2D5"]
-texture = ExtResource("6_2pqgh")
 
 [node name="Boulder" parent="." instance=ExtResource("1_vslfn")]
 position = Vector2(0, -500)

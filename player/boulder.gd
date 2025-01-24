@@ -3,7 +3,7 @@ extends RigidBody2D
 
 const MAX_SPEED: float = 400
 const JUMP_FORCE: float = 400
-const ACCEL_FORCE: float = 500
+const ACCEL_FORCE: float = 300
 
 @onready var gun: Gun = $Gun
 
