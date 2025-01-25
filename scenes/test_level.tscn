@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="5_rpkd5"]
 [ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="6_evls8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qy7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4cea"]
 size = Vector2(3252.5, 84)
 
 [node name="TestLevel" type="Node2D"]
@@ -23,7 +23,7 @@ position = Vector2(1433, 922)
 
 [node name="CollisionShape2D" parent="Terrain/DeathZone" index="0"]
 position = Vector2(-611.75, 32)
-shape = SubResource("RectangleShape2D_l5qy7")
+shape = SubResource("RectangleShape2D_f4cea")
 
 [node name="Obstacles" type="Node2D" parent="."]
 

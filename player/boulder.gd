@@ -51,10 +51,10 @@ func _physics_process(delta):
 	if !input_disabled:
 		if Input.is_action_pressed("accelerate"):
 			linear_velocity.x += ACCEL_FORCE * delta
-			rotation += 5 * delta
+			$Sprite2D.rotation += 5 * delta
 		elif Input.is_action_pressed("decelerate"):
 			linear_velocity.x -= ACCEL_FORCE * delta
-			rotation -= 5 * delta
+			$Sprite2D.rotation -= 5 * delta
 	
 	linear_velocity = linear_velocity.clamp(Vector2(-MAX_SPEED, -INF), Vector2(MAX_SPEED, INF))
 
