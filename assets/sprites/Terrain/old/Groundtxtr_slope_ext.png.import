@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2pad4pgh8g5"
-path="res://.godot/imported/Groundtxtr_Flat.png-a91c1d55dbac1bb6c0891a8a95cdbfba.ctex"
+uid="uid://w28y20g82icl"
+path="res://.godot/imported/Groundtxtr_slope_ext.png-82a9bd9d4d76b081d05fb48f3cced096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Terrain/Groundtxtr_Flat.png"
-dest_files=["res://.godot/imported/Groundtxtr_Flat.png-a91c1d55dbac1bb6c0891a8a95cdbfba.ctex"]
+source_file="res://assets/sprites/Terrain/old/Groundtxtr_slope_ext.png"
+dest_files=["res://.godot/imported/Groundtxtr_slope_ext.png-82a9bd9d4d76b081d05fb48f3cced096.ctex"]
 
 [params]
 

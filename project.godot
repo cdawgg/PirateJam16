@@ -21,6 +21,14 @@ GameState="*res://system/game_state.gd"
 UILayer="*res://scenes/ui_layer.tscn"
 SoundPlayer="*res://system/sound_player.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Clay/Documents/Godot/Projects/Movies/boulder_hang.avi"
+
 [gui]
 
 theme/custom_font="res://assets/UI/Font/AlfaSlabOne-Regular.ttf"
