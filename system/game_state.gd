@@ -7,6 +7,9 @@ var camera: Camera
 @onready var levels: Array[PackedScene] = [
 	preload('res://scenes/test_level.tscn'),
 	preload('res://scenes/level1.tscn'),
+	preload('res://scenes/level2.tscn'),
+	preload('res://scenes/level3.tscn'),
+	preload('res://scenes/level4.tscn'),
 ]
 var curr_level_index: int = 0
 var level: Level
