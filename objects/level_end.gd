@@ -32,6 +32,7 @@ func _on_guy_body_entered(body):
 	if body is Boulder:
 		body.disable_input()
 		guy.hide()
+		GameState.level.timer.stop()
 		locked_in = false
 		wait_timer.start(WAIT_TIME)
 		await wait_timer.timeout

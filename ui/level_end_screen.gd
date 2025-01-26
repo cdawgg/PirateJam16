@@ -3,6 +3,7 @@ extends Control
 
 @onready var score_label: RichTextLabel = $MarginContainer/VBoxContainer/GridContainer/EnemyScoreLabel
 @onready var kill_label: RichTextLabel = $MarginContainer/VBoxContainer/GridContainer/KillCountLabel
+@onready var time_label: RichTextLabel = $MarginContainer/VBoxContainer/GridContainer/TimeAmountLabel
 
 
 func _ready():
@@ -14,6 +15,7 @@ func _on_visibility_changed():
 	
 	score_label.text = '[right]' + str(GameState.level_kill_count) + ' / ' + str(GameState.level.enemies.size())
 	kill_label.text = '[right]' + str(GameState.total_kill_count + GameState.level_kill_count)
+	time_label.text = '[right]' + UILayer.scoreboard.timer_label.text
 
 
 func _on_retry_button_pressed():

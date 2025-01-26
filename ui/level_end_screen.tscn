@@ -77,6 +77,26 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="TimeLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Time remaining:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="TimeAmountLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[right]99:99.99"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10

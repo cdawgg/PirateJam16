@@ -25,6 +25,10 @@ func set_score(kill_count: int, enemy_count: int):
 	scoreboard.enemy_count = enemy_count
 
 
+func update_timer(seconds: float):
+	scoreboard.update_timer_label(seconds)
+
+
 func show_death_screen(show: bool = true):
 	death_screen.visible = show
 
