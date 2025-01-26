@@ -16,6 +16,7 @@
 scroll_scale = Vector2(0.1, 0.01)
 scroll_offset = Vector2(0, 150)
 repeat_size = Vector2(480, 0)
+autoscroll = Vector2(2, 0)
 repeat_times = 4
 
 [node name="sky" type="Sprite2D" parent="Parallax/Parallax2D"]
@@ -36,6 +37,7 @@ centered = false
 scroll_scale = Vector2(0.3, 0.03)
 scroll_offset = Vector2(0, 250)
 repeat_size = Vector2(480, 0)
+autoscroll = Vector2(4, 0)
 repeat_times = 4
 
 [node name="Clouds" type="Sprite2D" parent="Parallax/Parallax2D4"]
