@@ -55,14 +55,14 @@ alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Boulder Game [wip]"
+text = "From the Mountain"
 label_settings = SubResource("LabelSettings_6ucj1")
 horizontal_alignment = 1
 uppercase = true
 
 [node name="Subtext" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Ready to Roll"
+text = "A Boulder Move"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

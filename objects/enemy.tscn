@@ -27,6 +27,7 @@ shape = SubResource("RectangleShape2D_bgwob")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 texture = ExtResource("2_e8jvi")
+flip_h = true
 
 [node name="Explodable" parent="." instance=ExtResource("3_7msbk")]
 textures = Array[Texture2D]([ExtResource("4_v0j17"), ExtResource("5_2natw"), ExtResource("6_1ooqc"), ExtResource("2_e8jvi")])
