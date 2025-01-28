@@ -43,8 +43,6 @@ func _input(event):
 		pass
 	if event.is_action_pressed("fire_gun"):
 		gun.fire()
-	if event.is_action_pressed("debug_kill"):
-		die()
 
 
 func _physics_process(delta):

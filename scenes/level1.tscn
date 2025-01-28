@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b01ishn1porxi"]
+[gd_scene load_steps=10 format=4 uid="uid://b01ishn1porxi"]
 
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="1_8p3jf"]
 [ext_resource type="Script" path="res://objects/level.gd" id="1_g20np"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="2_f06ut"]
+[ext_resource type="AudioStream" uid="uid://cooxr6my88j13" path="res://assets/music/thing3.ogg" id="2_xsyib"]
 [ext_resource type="Script" path="res://objects/level_end.gd" id="4_u5uho"]
 [ext_resource type="Texture2D" uid="uid://bh510oryrbp38" path="res://assets/sprites/Player/Boulder_Red_32.png" id="5_7dgu3"]
 [ext_resource type="Script" path="res://objects/explodable.gd" id="6_isw6s"]
@@ -16,6 +17,7 @@ size = Vector2(32, 32)
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_g20np")
 level_time = 10.0
+music = ExtResource("2_xsyib")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-103, -471)

@@ -37,6 +37,10 @@ func play_sound2D(sound: AudioStream, pos: Vector2, volume: float = 0) -> AudioS
 
 
 func play_music(music: AudioStream):
+	if music_player.playing:
+		# Return if track is already playing, or no new music is called
+		if music_player.stream == music || !music: return
+	
 	music_player.stream = music
 	music_player.play()
 

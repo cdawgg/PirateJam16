@@ -58,6 +58,7 @@ func load_next_level():
 
 func restart_level():
 	UILayer.show_death_screen(false)
+	UILayer.show_level_end_screen(false)
 	boulder.revive()
 	load_level(curr_level_index)
 	start_level()

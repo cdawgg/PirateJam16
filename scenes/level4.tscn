@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://ci6vpyapaa87e"]
+[gd_scene load_steps=6 format=4 uid="uid://ci6vpyapaa87e"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_p5ema"]
+[ext_resource type="AudioStream" uid="uid://baeqplw134vqw" path="res://assets/music/thign2.ogg" id="2_gbg8s"]
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="2_pykoi"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_ow55b"]
 [ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="4_owivf"]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_p5ema")
+music = ExtResource("2_gbg8s")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-103, -471)

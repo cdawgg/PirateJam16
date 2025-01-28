@@ -6,6 +6,7 @@ extends Node2D
 var enemies: Array[Enemy] = [] # Save enemies here, hide them when they die
 var timer: Timer
 @export var level_time: float = 999
+@export var music: AudioStream
 
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start(level_time)
+	SoundPlayer.play_music(music)
 
 
 func _physics_process(_delta):
