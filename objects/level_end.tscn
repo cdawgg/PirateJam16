@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2xbsy0872b5i" path="res://assets/sprites/Enemies/MinerParts/MinerSunglasses.png" id="11_rv412"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57by5"]
-size = Vector2(202, 305)
+size = Vector2(184, 305)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0sa"]
 size = Vector2(32, 38)

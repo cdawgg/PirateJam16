@@ -1,18 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://b01ishn1porxi"]
+[gd_scene load_steps=7 format=4 uid="uid://b01ishn1porxi"]
 
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="1_8p3jf"]
 [ext_resource type="Script" path="res://objects/level.gd" id="1_g20np"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="2_f06ut"]
 [ext_resource type="AudioStream" uid="uid://cooxr6my88j13" path="res://assets/music/thing3.ogg" id="2_xsyib"]
-[ext_resource type="Script" path="res://objects/level_end.gd" id="4_u5uho"]
-[ext_resource type="Texture2D" uid="uid://bh510oryrbp38" path="res://assets/sprites/Player/Boulder_Red_32.png" id="5_7dgu3"]
-[ext_resource type="Script" path="res://objects/explodable.gd" id="6_isw6s"]
+[ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="5_txenv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cb0w"]
-size = Vector2(973, 318)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0sa"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeegf"]
+size = Vector2(584.5, 305)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_g20np")
@@ -39,40 +34,18 @@ position = Vector2(947, 480)
 [node name="Enemy2" parent="Enemies" instance=ExtResource("2_f06ut")]
 position = Vector2(432, 352)
 
-[node name="LevelEnd" type="Area2D" parent="."]
-position = Vector2(1157, 1012)
-collision_layer = 4
-script = ExtResource("4_u5uho")
+[node name="LevelEnd" parent="." instance=ExtResource("5_txenv")]
+position = Vector2(1154, 1011)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
-position = Vector2(384, -153)
-shape = SubResource("RectangleShape2D_6cb0w")
-debug_color = Color(0.620976, 0.529548, 0.19552, 0.42)
+[node name="CollisionShape2D" parent="LevelEnd" index="0"]
+position = Vector2(185.25, -152)
+shape = SubResource("RectangleShape2D_aeegf")
 
-[node name="Label" type="Label" parent="LevelEnd"]
+[node name="Label" parent="LevelEnd" index="1"]
 visible = false
-offset_left = -76.0
-offset_top = -186.0
-offset_right = 74.0
-offset_bottom = -58.0
-theme_override_font_sizes/font_size = 40
-text = "End of Level"
-autowrap_mode = 1
 
-[node name="Guy" type="Area2D" parent="LevelEnd"]
-position = Vector2(53, 300)
-collision_layer = 8
+[node name="Guy" parent="LevelEnd" index="2"]
+position = Vector2(-83, 291)
+rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd/Guy"]
-shape = SubResource("RectangleShape2D_2f0sa")
-
-[node name="Sprite2D" type="Sprite2D" parent="LevelEnd/Guy"]
-texture = ExtResource("5_7dgu3")
-
-[node name="Explodable" type="Node2D" parent="LevelEnd/Guy"]
-script = ExtResource("6_isw6s")
-textures = Array[Texture2D]([ExtResource("5_7dgu3")])
-piece_count = 8
-
-[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
-[connection signal="body_entered" from="LevelEnd/Guy" to="LevelEnd" method="_on_guy_body_entered"]
+[editable path="LevelEnd"]
