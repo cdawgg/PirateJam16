@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dywqhg6ma8r2x"]
+[gd_scene load_steps=14 format=3 uid="uid://dywqhg6ma8r2x"]
 
 [ext_resource type="Script" path="res://objects/level_end.gd" id="1_58ter"]
-[ext_resource type="Texture2D" uid="uid://bh510oryrbp38" path="res://assets/sprites/Player/Boulder_Red_32.png" id="2_16hrx"]
+[ext_resource type="Texture2D" uid="uid://up6nfq586y1l" path="res://assets/sprites/Enemies/Miner.png" id="2_i7e7m"]
 [ext_resource type="Script" path="res://objects/explodable.gd" id="3_xce4h"]
+[ext_resource type="Texture2D" uid="uid://b1yf4201s40e7" path="res://assets/sprites/Enemies/MinerParts/MinerArm2.png" id="4_j8snb"]
+[ext_resource type="Texture2D" uid="uid://cji487rjbmf20" path="res://assets/sprites/Enemies/MinerParts/MinerArm.png" id="5_ry5h6"]
+[ext_resource type="Texture2D" uid="uid://bxs1xlxnwi400" path="res://assets/sprites/Enemies/MinerParts/MinerBody.png" id="6_pb3tg"]
+[ext_resource type="Texture2D" uid="uid://bwe4dxrlhcnqs" path="res://assets/sprites/Enemies/MinerParts/MinerHead.png" id="7_r01o6"]
+[ext_resource type="Texture2D" uid="uid://cjcuy1pdndl1w" path="res://assets/sprites/Enemies/MinerParts/MinerLeg2.png" id="8_3xsp6"]
+[ext_resource type="Texture2D" uid="uid://chk84f78q4niq" path="res://assets/sprites/Enemies/MinerParts/MinerLeg.png" id="9_d8tyu"]
+[ext_resource type="Texture2D" uid="uid://cmav1l40lr6xi" path="res://assets/sprites/Enemies/MinerParts/MinerPickaxe.png" id="10_g3l4x"]
+[ext_resource type="Texture2D" uid="uid://b2xbsy0872b5i" path="res://assets/sprites/Enemies/MinerParts/MinerSunglasses.png" id="11_rv412"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57by5"]
 size = Vector2(202, 305)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0sa"]
-size = Vector2(32, 32)
+size = Vector2(32, 38)
 
 [node name="LevelEnd" type="Area2D"]
 collision_layer = 0
@@ -33,14 +41,15 @@ position = Vector2(500, -16)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guy"]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_2f0sa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Guy"]
-texture = ExtResource("2_16hrx")
+texture = ExtResource("2_i7e7m")
 
 [node name="Explodable" type="Node2D" parent="Guy"]
 script = ExtResource("3_xce4h")
-textures = Array[Texture2D]([ExtResource("2_16hrx")])
+textures = Array[Texture2D]([ExtResource("4_j8snb"), ExtResource("5_ry5h6"), ExtResource("6_pb3tg"), ExtResource("7_r01o6"), ExtResource("8_3xsp6"), ExtResource("9_d8tyu"), ExtResource("10_g3l4x"), ExtResource("11_rv412")])
 piece_count = 8
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

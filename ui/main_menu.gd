@@ -28,6 +28,11 @@ func _on_play_pressed():
 	UILayer.show_scoreboard()
 
 
+func _on_settings_pressed():
+	hide()
+	UILayer.show_settings()
+
+
 func _on_credits_pressed():
 	hide()
 	UILayer.show_credits()

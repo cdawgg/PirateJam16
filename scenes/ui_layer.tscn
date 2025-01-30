@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqqm8xj6jpria"]
+[gd_scene load_steps=9 format=3 uid="uid://bqqm8xj6jpria"]
 
 [ext_resource type="Script" path="res://scenes/ui_layer.gd" id="1_tplud"]
 [ext_resource type="PackedScene" uid="uid://csdkqy3bcj2y3" path="res://ui/scoreboard.tscn" id="2_a2o45"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b4gsjorkhc21k" path="res://ui/level_complete.tscn" id="5_bafl7"]
 [ext_resource type="PackedScene" uid="uid://c2iwfvnwdeu7e" path="res://ui/level_end_screen.tscn" id="6_tvp4r"]
 [ext_resource type="PackedScene" uid="uid://d2hd6vxgtsh0l" path="res://ui/credits.tscn" id="7_tfmvt"]
+[ext_resource type="PackedScene" uid="uid://sxwgp0uaqyjp" path="res://ui/settings.tscn" id="8_3asm2"]
 
 [node name="UILayer" type="CanvasLayer"]
 script = ExtResource("1_tplud")
@@ -46,4 +47,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Credits" parent="." instance=ExtResource("7_tfmvt")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("8_3asm2")]
 visible = false

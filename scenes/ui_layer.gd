@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var video_player: VideoStreamPlayer = $VideoStreamPlayer
 @onready var screen_cover: ColorRect = $ScreenCover
 @onready var credits: Credits = $Credits
+@onready var settings: Settings = $Settings
 
 
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 	video_player.hide()
 	screen_cover.hide()
 	credits.hide()
+	settings.hide()
 	
 	main_menu.show()
 
@@ -63,6 +65,10 @@ func fade_screen(duration: float, fade_in: bool = false):
 	tween.tween_property(screen_cover, "modulate:a", end_alpha, duration).from_current()
 	await tween.finished
 	if fade_in: screen_cover.hide()
+
+
+func show_settings(show: bool = true):
+	settings.visible = show
 
 
 func show_credits(show: bool = true):

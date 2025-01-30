@@ -10,6 +10,8 @@ var music_position: float = 0
 
 
 func play_sound(sound: AudioStream, volume: float = 0) -> AudioStreamPlayer:
+	if !is_node_ready(): await ready
+	
 	for audio_player in audio_players.get_children():
 		if audio_player.playing: continue
 		
@@ -23,6 +25,8 @@ func play_sound(sound: AudioStream, volume: float = 0) -> AudioStreamPlayer:
 
 
 func play_sound2D(sound: AudioStream, pos: Vector2, volume: float = 0) -> AudioStreamPlayer2D:
+	if !is_node_ready(): await ready
+	
 	for audio_player in audio_players_2D.get_children():
 		if audio_player.playing: continue ;
 		

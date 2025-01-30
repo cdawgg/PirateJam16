@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnc1dhgwa5uu6"]
+[gd_scene load_steps=16 format=3 uid="uid://cnc1dhgwa5uu6"]
 
 [ext_resource type="Script" path="res://objects/enemy.gd" id="1_0amj3"]
 [ext_resource type="Script" path="res://objects/enemy_sprites.gd" id="2_e4rrw"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cuphxf5q7eapx" path="res://assets/sprites/Enemies/enemy2.png" id="5_2natw"]
 [ext_resource type="Texture2D" uid="uid://b4s51r6xfafsm" path="res://assets/sprites/Enemies/enemy3.png" id="6_1ooqc"]
 [ext_resource type="Resource" uid="uid://cakeb7oxli0wt" path="res://resources/enemy sprites/enemy4.tres" id="6_5qy4i"]
+[ext_resource type="AudioStream" uid="uid://ci0tfl0umi3p5" path="res://assets/sfx/enemy/Eee.wav" id="7_m1oyo"]
+[ext_resource type="AudioStream" uid="uid://bc3saef3wgwln" path="res://assets/sfx/enemy/Oof.wav" id="8_7bx8a"]
+[ext_resource type="AudioStream" uid="uid://ba2knub037scs" path="res://assets/sfx/enemy/Ow.wav" id="9_lgl12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwob"]
 size = Vector2(10, 14)
@@ -19,6 +22,7 @@ size = Vector2(10, 14)
 collision_layer = 8
 script = ExtResource("1_0amj3")
 sprites = Array[ExtResource("2_e4rrw")]([ExtResource("3_3feq7"), ExtResource("4_ilyhb"), ExtResource("5_0u5al"), ExtResource("6_5qy4i")])
+death_sounds = Array[AudioStream]([ExtResource("7_m1oyo"), ExtResource("8_7bx8a"), ExtResource("9_lgl12")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

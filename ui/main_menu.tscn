@@ -27,6 +27,7 @@ offset_right = 256.0
 offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
@@ -47,6 +48,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Play"
 
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
 [node name="Credits" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -54,4 +61,5 @@ size_flags_horizontal = 4
 text = "Credits"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

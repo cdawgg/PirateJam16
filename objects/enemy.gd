@@ -12,6 +12,8 @@ var frame_timer: float = 0
 
 var dead: bool = false
 
+@export var death_sounds: Array[AudioStream]
+
 
 func _ready():
 	curr_sprites = sprites.pick_random()
@@ -40,6 +42,7 @@ func die():
 	
 	GameState.level_kill_count += 1
 	GameState.shake_camera(0.5)
+	SoundPlayer.play_sound2D(death_sounds.pick_random(), global_position, -4)
 
 
 func respawn():

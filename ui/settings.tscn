@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://sxwgp0uaqyjp"]
+
+[ext_resource type="Script" path="res://ui/settings.gd" id="1_12g6g"]
+[ext_resource type="Script" path="res://ui/volume_slider.gd" id="2_2jcy6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wo044"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpbhd"]
+font_size = 25
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12g6g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_wo044")
+horizontal_alignment = 1
+
+[node name="MusicVolume" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolume"]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_rpbhd")
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/MusicVolume"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("2_2jcy6")
+bus_name = "Music"
+
+[node name="SFXVolume" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SFXVolume"]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_rpbhd")
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SFXVolume"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("2_2jcy6")
+bus_name = "SFX"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

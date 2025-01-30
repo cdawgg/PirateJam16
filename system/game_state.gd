@@ -58,9 +58,14 @@ func load_next_level():
 	if curr_level_index >= levels.size() - 1:
 		if total_kill_count == max_kill_count:
 			# TODO: Play secret cutscene (await)
+			# await UILayer.play_video(load("path"))
 			pass
 		else:
 			# TODO: Play loser cutscene (await)
+			# await UILayer.play_video(load("path"))
+			# TODO: or if you wanna show a popup or something instead
+			# UILayer.show_the_thing()
+			# return
 			pass
 		UILayer.show_credits()
 		return
