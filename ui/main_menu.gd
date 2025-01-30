@@ -6,7 +6,7 @@ extends Control
 @onready var intro_video: VideoStream = preload("res://assets/Intro.ogv")
 @onready var intro_music: AudioStream = preload("res://assets/music/cave.ogg")
 
-const SKIP_CUTSCENE_DEBUG: bool = true
+const SKIP_CUTSCENE_DEBUG: bool = false
 
 
 func _ready():
