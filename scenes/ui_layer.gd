@@ -46,12 +46,18 @@ func show_level_end_screen(show: bool = true):
 	level_end_screen.visible = show
 
 
-func play_video(video: VideoStream):
+func play_video(video: VideoStream, loop: bool = false):
 	video_player.stream = video
+	video_player.loop = loop
 	video_player.show()
 	video_player.play()
 	
 	await video_player.finished
+	video_player.hide()
+
+
+func stop_video():
+	video_player.stop()
 	video_player.hide()
 
 

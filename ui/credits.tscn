@@ -34,46 +34,52 @@ text = "CREDITS"
 label_settings = SubResource("LabelSettings_ihyey")
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="ccdawgg" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-columns = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Name" type="Label" parent="VBoxContainer/ccdawgg"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "ccdawgg"
 label_settings = SubResource("LabelSettings_hjwwy")
 
-[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Roles" type="Label" parent="VBoxContainer/ccdawgg"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "role"
+text = "Programming"
 label_settings = SubResource("LabelSettings_hjwwy")
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Altimely" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/Altimely"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Altimely"
 label_settings = SubResource("LabelSettings_hjwwy")
 
-[node name="Label4" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Roles" type="Label" parent="VBoxContainer/Altimely"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "role"
+text = "Art"
 label_settings = SubResource("LabelSettings_hjwwy")
 horizontal_alignment = 2
 
-[node name="Label5" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Kri" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/Kri"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Kri"
 label_settings = SubResource("LabelSettings_hjwwy")
 
-[node name="Label6" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Roles" type="Label" parent="VBoxContainer/Kri"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "role"
+text = "Programming
+Music"
 label_settings = SubResource("LabelSettings_hjwwy")
 horizontal_alignment = 2
 
