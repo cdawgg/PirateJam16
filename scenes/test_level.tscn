@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="6_evls8"]
 [ext_resource type="PackedScene" uid="uid://cqioanwsk6j2n" path="res://objects/sign.tscn" id="7_qpis6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psy1f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i7cs"]
 size = Vector2(5102, 84)
 
 [node name="TestLevel" type="Node2D"]
@@ -26,7 +26,7 @@ position = Vector2(1433, 922)
 
 [node name="CollisionShape2D" parent="Terrain/DeathZone" index="0"]
 position = Vector2(-791, 32)
-shape = SubResource("RectangleShape2D_psy1f")
+shape = SubResource("RectangleShape2D_4i7cs")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
