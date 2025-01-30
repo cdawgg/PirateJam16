@@ -10,6 +10,8 @@ var shake_timer: float = 0
 var shaking: bool = false
 var curr_strength: float = 0
 
+var on_boulder: bool = true
+var boulder_offset: Vector2 = Vector2.ZERO
 const BASE_OFFSET: Vector2 = Vector2(100, 50)
 const SMOOTHING: float = 5
 
@@ -22,6 +24,14 @@ func _physics_process(delta):
 	if follow_target:
 		var target_position = follow_target.global_position - target_offset
 		
+		if on_boulder:
+			var input_dir: float = Input.get_action_strength("accelerate") - Input.get_action_strength("decelerate") 
+			var x_bounds: Vector2 = Vector2(-BASE_OFFSET.x, BASE_OFFSET.x)
+			var x_offset: float = clampf(BASE_OFFSET.x * input_dir, x_bounds.x, x_bounds.y)
+			
+			boulder_offset = boulder_offset.lerp(Vector2(x_offset, BASE_OFFSET.y), SMOOTHING * delta)
+			target_position += boulder_offset
+		
 		if is_lerping:
 			# Ease towards the target
 			position = position.lerp(target_position, SMOOTHING * delta)
@@ -31,6 +41,7 @@ func _physics_process(delta):
 				is_lerping = false
 		else:
 			position = target_position # Follow the target directly after reaching it the first time
+		
 	
 	if shaking:
 		shake_timer -= delta
@@ -54,7 +65,7 @@ func set_follow_target(target: Node2D):
 	var skip_lerping: bool = false
 	
 	if target is Boulder:
-		target_position += BASE_OFFSET
+		on_boulder = true
 		skip_lerping = true
 	
 	pan_to_target(target_position, skip_lerping)

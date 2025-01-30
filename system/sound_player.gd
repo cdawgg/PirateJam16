@@ -36,13 +36,29 @@ func play_sound2D(sound: AudioStream, pos: Vector2, volume: float = 0) -> AudioS
 	return null
 
 
-func play_music(music: AudioStream):
+func play_music(music: AudioStream, volume: float = 0):
+	if !is_node_ready(): await ready
+	
 	if music_player.playing:
 		# Return if track is already playing, or no new music is called
 		if music_player.stream == music || !music: return
 	
 	music_player.stream = music
+	music_player.volume_db = volume
 	music_player.play()
+
+
+func fade_music(target_volume: float, duration: float, fade_in: bool = false):
+	target_volume = clamp(target_volume, 0.0, 1.0)
+	var target_volume_db: float
+	if target_volume == 0:
+		target_volume_db = -80
+	else:
+		target_volume_db = linear_to_db(target_volume)
+	if fade_in: music_player.volume_db = -20
+	var tween = create_tween()
+	tween.tween_property(music_player, "volume_db", target_volume_db, duration).from_current()
+	await tween.finished
 
 
 func pause_music(val: bool):

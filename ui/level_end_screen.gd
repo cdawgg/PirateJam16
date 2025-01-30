@@ -19,10 +19,14 @@ func _on_visibility_changed():
 
 
 func _on_retry_button_pressed():
+	await UILayer.fade_screen(0.2)
 	GameState.restart_level()
 	hide()
+	UILayer.fade_screen(0.2, true)
 
 
 func _on_next_button_pressed():
+	await UILayer.fade_screen(0.2)
 	GameState.load_next_level()
 	hide()
+	UILayer.fade_screen(0.2, true)
