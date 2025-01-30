@@ -10,6 +10,7 @@
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_q141q")
+unlock_gun = true
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(48, -542)

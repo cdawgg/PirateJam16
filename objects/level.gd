@@ -8,12 +8,21 @@ var timer: Timer
 @export var level_time: float = 999
 @export var music: AudioStream
 
+@export var unlock_gun: bool = false
+@export var unlock_double_jump: bool = false
+
 
 func _ready():
 	# Save all enemies
 	for child in $Enemies.get_children():
 		if child is not Enemy: continue
 		enemies.append(child)
+	
+	# Unlock power ups (Will stay unlocked for all future levels)
+	if unlock_gun:
+		GameState.gun_unlocked = true
+	if unlock_double_jump:
+		GameState.extra_jumps = 1
 	
 	timer = Timer.new()
 	add_child(timer)

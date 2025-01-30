@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="EnemySprites" load_steps=8 format=3 uid="uid://c21toajubf0cr"]
 
 [ext_resource type="Script" path="res://objects/enemy_sprites.gd" id="1_1psji"]
-[ext_resource type="Texture2D" uid="uid://cuphxf5q7eapx" path="res://assets/sprites/Enemies/enemy2.png" id="1_geyn8"]
 [ext_resource type="Texture2D" uid="uid://de26vd55gkvfv" path="res://assets/sprites/Enemies/Enemy2 Parts/arm_enemy2.png" id="2_tocxb"]
 [ext_resource type="Texture2D" uid="uid://i7yprfjmujjs" path="res://assets/sprites/Enemies/Enemy2 Parts/clothes_bot_enemy2.png" id="3_2fell"]
 [ext_resource type="Texture2D" uid="uid://5buay5ewf863" path="res://assets/sprites/Enemies/Enemy2 Parts/clothes_top_enemy2.png" id="4_4jb1a"]
 [ext_resource type="Texture2D" uid="uid://b0ks5115tq1tt" path="res://assets/sprites/Enemies/Enemy2 Parts/head_enemy2.png" id="5_p268x"]
 [ext_resource type="Texture2D" uid="uid://c02oq0fwxn18u" path="res://assets/sprites/Enemies/Enemy2 Parts/tool_enemy2.png" id="6_otaoi"]
+[ext_resource type="Texture2D" uid="uid://be4i23w2yjif2" path="res://assets/sprites/Enemies/Enemy Animations/enem2-Sheet.png" id="7_28wsj"]
 
 [resource]
 script = ExtResource("1_1psji")
-full_sprite = ExtResource("1_geyn8")
+sheet = ExtResource("7_28wsj")
+frame_count = 22
 part_sprites = Array[Texture2D]([ExtResource("2_tocxb"), ExtResource("2_tocxb"), ExtResource("3_2fell"), ExtResource("4_4jb1a"), ExtResource("5_p268x"), ExtResource("6_otaoi")])

@@ -7,6 +7,7 @@
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_4eqvb")
+unlock_double_jump = true
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-103, -471)

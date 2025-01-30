@@ -18,7 +18,7 @@ func _physics_process(_delta):
 	look_at(get_global_mouse_position()) #always look at mouse otherwise gun spins with player
 
 func fire():
-	if on_cooldown: return
+	if on_cooldown || !visible: return
 	
 	var bullet: Bullet = bullet_packed.instantiate()
 	GameState.game_world.add_child(bullet)

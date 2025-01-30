@@ -6,7 +6,7 @@ extends Control
 @onready var intro_video: VideoStream = preload("res://assets/Intro.ogv")
 @onready var intro_music: AudioStream = preload("res://assets/music/cave.ogg")
 
-const SKIP_CUTSCENE_DEBUG: bool = false
+const SKIP_CUTSCENE_DEBUG: bool = true
 
 
 func _ready():
@@ -26,3 +26,8 @@ func _on_play_pressed():
 	
 	GameState.load_level(0)
 	UILayer.show_scoreboard()
+
+
+func _on_credits_pressed():
+	hide()
+	UILayer.show_credits()

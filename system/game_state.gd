@@ -23,7 +23,8 @@ var total_kill_count: int = 0 # Enemies killed in previous levels
 var max_kill_count: int = 0 # Potential of enemies killed in previous levels
 
 ## Upgrades
-var gun_unlocked: bool = true
+var gun_unlocked: bool = false
+var extra_jumps: int = 0
 
 signal level_started
 
@@ -40,6 +41,11 @@ func load_level(i: int):
 	for child in level_holder.get_children():
 		level_holder.remove_child(child)
 	
+	# Reset kills (in case player restarts from the end)
+	if i == 0:
+		total_kill_count = 0
+		max_kill_count = 0
+	
 	curr_level_index = i
 	level = levels[i].instantiate()
 	level_holder.add_child(level)
@@ -50,7 +56,13 @@ func load_next_level():
 	finish_level()
 	
 	if curr_level_index >= levels.size() - 1:
-		# TODO: Show end screen
+		if total_kill_count == max_kill_count:
+			# TODO: Play secret cutscene (await)
+			pass
+		else:
+			# TODO: Play loser cutscene (await)
+			pass
+		UILayer.show_credits()
 		return
 	
 	load_level(curr_level_index + 1)
@@ -72,9 +84,11 @@ func start_level():
 	camera.set_follow_target(boulder)
 	
 	boulder.enable_gun(gun_unlocked)
+	boulder.extra_jumps = extra_jumps
 	
 	boulder.process_mode = Node.PROCESS_MODE_INHERIT
 	boulder.position = level.spawn_point.position
+	boulder.show()
 	boulder.disable_input(false)
 	
 	level_started.emit()

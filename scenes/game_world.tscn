@@ -70,6 +70,7 @@ zoom = Vector2(2, 2)
 script = ExtResource("2_7yaab")
 
 [node name="Boulder" parent="." instance=ExtResource("1_vslfn")]
+visible = false
 position = Vector2(0, -500)
 
 [node name="Level" type="Node2D" parent="."]

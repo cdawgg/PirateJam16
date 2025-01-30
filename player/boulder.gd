@@ -23,7 +23,7 @@ var jump_cd_ready: bool = true
 const JUMP_CD_LENGTH: float = 0.3
 
 const MAX_RUMBLE_VOLUME: float = 1
-const MAX_BOUNCE_VOLUME: float = 5
+const MAX_BOUNCE_VOLUME: float = 3.5
 @onready var rumble_sound: AudioStreamPlayer2D = $RumbleSound
 @export var bounce_sounds: Array[AudioStream]
 @export var jump_sound: AudioStream
