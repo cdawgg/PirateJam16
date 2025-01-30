@@ -25,6 +25,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body is Boulder:
 		GameState.camera.set_follow_target(guy_sprite)
+		GameState.level.timer.stop()
 		locked_in = true
 
 
@@ -32,7 +33,6 @@ func _on_guy_body_entered(body):
 	if body is Boulder:
 		body.disable_input()
 		guy.hide()
-		GameState.level.timer.stop()
 		locked_in = false
 		wait_timer.start(WAIT_TIME)
 		await wait_timer.timeout

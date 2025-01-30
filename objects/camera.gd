@@ -25,7 +25,7 @@ func _physics_process(delta):
 		var target_position = follow_target.global_position - target_offset
 		
 		if on_boulder:
-			var input_dir: float = Input.get_action_strength("accelerate") - Input.get_action_strength("decelerate") 
+			var input_dir: float = GameState.boulder.horizontal_input 
 			var x_bounds: Vector2 = Vector2(-BASE_OFFSET.x, BASE_OFFSET.x)
 			var x_offset: float = clampf(BASE_OFFSET.x * input_dir, x_bounds.x, x_bounds.y)
 			

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://iu2rxwf4hguw"
+path="res://.godot/imported/Concrete scrape loop.wav-e0d76866c36e2a91bcf3116600d57d80.sample"
+
+[deps]
+
+source_file="res://assets/sfx/boulder/Concrete scrape loop.wav"
+dest_files=["res://.godot/imported/Concrete scrape loop.wav-e0d76866c36e2a91bcf3116600d57d80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=3
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

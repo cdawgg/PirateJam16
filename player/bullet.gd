@@ -1,7 +1,7 @@
 class_name Bullet
 extends RigidBody2D
 
-const FORCE: float = 5000
+const FORCE: float = 3000
 const MAX_LIFETIME: float = 5
 const RAY_LENGTH: float = 400
 
@@ -13,8 +13,13 @@ var ray_tar_pos: Vector2
 var dir: Vector2
 var lifetime: float
 
+@onready var shoot_sound: AudioStreamPlayer2D = $ShootSound
+@onready var explode_sound: AudioStreamPlayer2D = $ExplodeSound
+
 
 func _process(delta):
+	if !visible: return
+	
 	if !ray_target:
 		ray_target = ray.get_collider()
 		if ray_target is Area2D:
@@ -25,7 +30,6 @@ func _process(delta):
 
 		# If bullet has moved past its raycasted target
 		if tar_prog - curr_prog >= 0:
-			print("CULLING")
 			_on_hitbox_area_entered(ray_target)
 	
 	if lifetime <= 0: remove()
@@ -38,11 +42,13 @@ func fire(target: Vector2, parent_velocity: Vector2):
 	linear_velocity = parent_velocity + (dir * FORCE)
 	lifetime = MAX_LIFETIME
 	look_at(target)
+	shoot_sound.play()
 
 
 func remove():
+	explode_sound.play()
+	$Hitbox.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	hide()
-	queue_free()
 
 
 func _on_hitbox_area_entered(area):

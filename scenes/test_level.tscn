@@ -1,18 +1,20 @@
-[gd_scene load_steps=9 format=4 uid="uid://kkr4v0d00phg"]
+[gd_scene load_steps=10 format=4 uid="uid://kkr4v0d00phg"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_drve2"]
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="2_20nuq"]
+[ext_resource type="AudioStream" uid="uid://cooxr6my88j13" path="res://assets/music/thing3.ogg" id="2_wr5uw"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="3_d7qg0"]
 [ext_resource type="PackedScene" uid="uid://hb1dx7dyu6qs" path="res://objects/shootable.tscn" id="3_i8yxo"]
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="5_rpkd5"]
 [ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="6_evls8"]
 [ext_resource type="PackedScene" uid="uid://cqioanwsk6j2n" path="res://objects/sign.tscn" id="7_qpis6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvj6j"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j8jp"]
 size = Vector2(5102, 84)
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_drve2")
+music = ExtResource("2_wr5uw")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(48, -542)
@@ -24,7 +26,7 @@ position = Vector2(1433, 922)
 
 [node name="CollisionShape2D" parent="Terrain/DeathZone" index="0"]
 position = Vector2(-791, 32)
-shape = SubResource("RectangleShape2D_hvj6j")
+shape = SubResource("RectangleShape2D_6j8jp")
 
 [node name="Obstacles" type="Node2D" parent="."]
 

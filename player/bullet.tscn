@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr7sj0uun4y2k"]
+[gd_scene load_steps=7 format=3 uid="uid://cr7sj0uun4y2k"]
 
 [ext_resource type="Script" path="res://player/bullet.gd" id="1_65vg4"]
 [ext_resource type="Texture2D" uid="uid://cru1tr6m05yaf" path="res://assets/sprites/Upgrades/cannon_lazer.png" id="2_81ws4"]
+[ext_resource type="AudioStream" uid="uid://c8uh5hihnghbj" path="res://assets/sfx/gun/zap.wav" id="2_ryftj"]
+[ext_resource type="AudioStream" uid="uid://xbejjpfh4rl3" path="res://assets/sfx/gun/explode.wav" id="4_alak4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bghcp"]
 size = Vector2(22, 10)
@@ -34,6 +36,14 @@ shape = SubResource("RectangleShape2D_jmrr4")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 30
 collide_with_areas = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ryftj")
+bus = &"SFX"
+
+[node name="ExplodeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_alak4")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
