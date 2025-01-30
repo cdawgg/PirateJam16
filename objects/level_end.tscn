@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dywqhg6ma8r2x"]
+[gd_scene load_steps=15 format=3 uid="uid://dywqhg6ma8r2x"]
 
 [ext_resource type="Script" path="res://objects/level_end.gd" id="1_58ter"]
+[ext_resource type="AudioStream" uid="uid://bntec8wav512b" path="res://assets/sfx/enemy/man-death-scream-186763.mp3" id="2_0hso8"]
 [ext_resource type="Texture2D" uid="uid://up6nfq586y1l" path="res://assets/sprites/Enemies/Miner.png" id="2_i7e7m"]
 [ext_resource type="Script" path="res://objects/explodable.gd" id="3_xce4h"]
 [ext_resource type="Texture2D" uid="uid://b1yf4201s40e7" path="res://assets/sprites/Enemies/MinerParts/MinerArm2.png" id="4_j8snb"]
@@ -21,6 +22,7 @@ size = Vector2(32, 38)
 [node name="LevelEnd" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_58ter")
+death_sound = ExtResource("2_0hso8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -152)

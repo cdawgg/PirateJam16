@@ -3,6 +3,7 @@ extends Area2D
 
 @onready var guy: Area2D = $Guy
 @onready var guy_sprite: Sprite2D = $Guy/Sprite2D
+@export var death_sound: AudioStream
 
 var locked_in: bool = false
 const LOCK_IN_FORCE: float = 5000
@@ -31,6 +32,7 @@ func _on_body_entered(body):
 
 func _on_guy_body_entered(body):
 	if body is Boulder:
+		SoundPlayer.play_sound(death_sound)
 		body.disable_input()
 		guy.hide()
 		locked_in = false
