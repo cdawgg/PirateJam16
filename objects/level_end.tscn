@@ -30,6 +30,7 @@ shape = SubResource("RectangleShape2D_57by5")
 debug_color = Color(0.620976, 0.529548, 0.19552, 0.42)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -76.0
 offset_top = -186.0
 offset_right = 74.0

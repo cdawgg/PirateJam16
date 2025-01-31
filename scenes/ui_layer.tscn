@@ -19,7 +19,6 @@ visible = false
 visible = false
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_tqgvh")]
-visible = false
 
 [node name="EndingLose" parent="." instance=ExtResource("4_tqgvh")]
 visible = false
