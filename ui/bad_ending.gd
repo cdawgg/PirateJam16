@@ -11,7 +11,7 @@ func _on_visibility_changed():
 	if escaped == 1:
 		label.text = '( ' + str(escaped) + ' enemy lived to tell the tale... )'
 	else:
-		label.text = '( )' + str(escaped) + ' enemies lived to tell the tale... )'
+		label.text = '( ' + str(escaped) + ' enemies lived to tell the tale... )'
 
 
 func _on_retry_pressed():
