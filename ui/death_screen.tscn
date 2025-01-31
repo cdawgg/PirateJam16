@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://chdkg2yoebc7f"]
+[gd_scene load_steps=2 format=3 uid="uid://chdkg2yoebc7f"]
+
+[ext_resource type="Texture2D" uid="uid://da5rs8v48ls2e" path="res://assets/sprites/gameover.png" id="1_nfcjj"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -22,14 +24,18 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(408.5, 82.5)
+scale = Vector2(3.05125, 3.22222)
+texture = ExtResource("1_nfcjj")
+
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
-text = "YOU ARE RUBBLE..."
+text = "From Boulder to..."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "press <R> to try again"
 horizontal_alignment = 1
