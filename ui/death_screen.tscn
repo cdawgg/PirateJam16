@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chdkg2yoebc7f"]
 
-[ext_resource type="Texture2D" uid="uid://da5rs8v48ls2e" path="res://assets/sprites/gameover.png" id="1_nfcjj"]
+[ext_resource type="Texture2D" uid="uid://bxfxvlwir0r4" path="res://assets/sprites/gameover.png" id="1_nfcjj"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3

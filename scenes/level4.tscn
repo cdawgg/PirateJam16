@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ci6vpyapaa87e"]
+[gd_scene load_steps=21 format=4 uid="uid://ci6vpyapaa87e"]
 
 [ext_resource type="Script" path="res://objects/level.gd" id="1_p5ema"]
 [ext_resource type="AudioStream" uid="uid://baeqplw134vqw" path="res://assets/music/thign2.ogg" id="2_gbg8s"]
@@ -8,35 +8,38 @@
 [ext_resource type="PackedScene" uid="uid://bsy7how66wntf" path="res://objects/death_zone.tscn" id="6_40b8w"]
 [ext_resource type="Script" path="res://objects/death_zone.gd" id="7_m23np"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4dyp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2k4w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x2xp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmay8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hara3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tw53"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt7rn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vf5m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqo01"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r71h1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_633v2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbfny"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mf2ms"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipex3"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vc0i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2nkb"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1q3o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7nyw"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vsdw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnv3g"]
 size = Vector2(200, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqxtl"]
+size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_towt4"]
 size = Vector2(50, 50)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib47g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrhr"]
 size = Vector2(300, 84)
 
 [node name="Level4" type="Node2D"]
@@ -236,7 +239,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone20"]
-shape = SubResource("RectangleShape2D_f4dyp")
+shape = SubResource("RectangleShape2D_s2k4w")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone21" type="Area2D" parent="."]
@@ -246,7 +249,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone21"]
-shape = SubResource("RectangleShape2D_0x2xp")
+shape = SubResource("RectangleShape2D_mmay8")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone25" type="Area2D" parent="."]
@@ -256,7 +259,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone25"]
-shape = SubResource("RectangleShape2D_hara3")
+shape = SubResource("RectangleShape2D_3tw53")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone26" type="Area2D" parent="."]
@@ -266,7 +269,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone26"]
-shape = SubResource("RectangleShape2D_dt7rn")
+shape = SubResource("RectangleShape2D_2vf5m")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone22" type="Area2D" parent="."]
@@ -276,7 +279,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone22"]
-shape = SubResource("RectangleShape2D_eqo01")
+shape = SubResource("RectangleShape2D_r71h1")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone2" type="Area2D" parent="."]
@@ -286,7 +289,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone2"]
-shape = SubResource("RectangleShape2D_633v2")
+shape = SubResource("RectangleShape2D_mbfny")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone3" type="Area2D" parent="."]
@@ -296,7 +299,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone3"]
-shape = SubResource("RectangleShape2D_mf2ms")
+shape = SubResource("RectangleShape2D_ipex3")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone5" type="Area2D" parent="."]
@@ -305,7 +308,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone5"]
-shape = SubResource("RectangleShape2D_8vc0i")
+shape = SubResource("RectangleShape2D_o2nkb")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone6" type="Area2D" parent="."]
@@ -315,7 +318,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone6"]
-shape = SubResource("RectangleShape2D_g1q3o")
+shape = SubResource("RectangleShape2D_f7nyw")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone13" type="Area2D" parent="."]
@@ -325,7 +328,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone13"]
-shape = SubResource("RectangleShape2D_0vsdw")
+shape = SubResource("RectangleShape2D_pnv3g")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone7" type="Area2D" parent="."]
@@ -336,7 +339,7 @@ script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone7"]
 position = Vector2(24, 399)
-shape = SubResource("RectangleShape2D_towt4")
+shape = SubResource("RectangleShape2D_hqxtl")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone7"]
@@ -367,7 +370,7 @@ script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone4"]
 position = Vector2(-23, -4)
-shape = SubResource("RectangleShape2D_ib47g")
+shape = SubResource("RectangleShape2D_yfrhr")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [connection signal="body_entered" from="DeathZone20" to="DeathZone20" method="_on_body_entered"]
