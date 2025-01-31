@@ -1,18 +1,33 @@
-[gd_scene load_steps=7 format=4 uid="uid://b01ishn1porxi"]
+[gd_scene load_steps=19 format=4 uid="uid://b01ishn1porxi"]
 
 [ext_resource type="TileSet" uid="uid://coj8vy6uq4ua3" path="res://assets/tilemap/tilemap.tres" id="1_8p3jf"]
 [ext_resource type="Script" path="res://objects/level.gd" id="1_g20np"]
 [ext_resource type="PackedScene" uid="uid://cnc1dhgwa5uu6" path="res://objects/enemy.tscn" id="2_f06ut"]
 [ext_resource type="AudioStream" uid="uid://cooxr6my88j13" path="res://assets/music/thing3.ogg" id="2_xsyib"]
-[ext_resource type="PackedScene" uid="uid://dywqhg6ma8r2x" path="res://objects/level_end.tscn" id="5_txenv"]
+[ext_resource type="Script" path="res://objects/level_end.gd" id="5_jlvqr"]
+[ext_resource type="AudioStream" uid="uid://bntec8wav512b" path="res://assets/sfx/enemy/man-death-scream-186763.mp3" id="6_6m432"]
+[ext_resource type="Texture2D" uid="uid://up6nfq586y1l" path="res://assets/sprites/Enemies/Miner.png" id="7_bubrj"]
+[ext_resource type="Script" path="res://objects/explodable.gd" id="8_k5587"]
+[ext_resource type="Texture2D" uid="uid://b1yf4201s40e7" path="res://assets/sprites/Enemies/MinerParts/MinerArm2.png" id="9_l8jkk"]
+[ext_resource type="Texture2D" uid="uid://cji487rjbmf20" path="res://assets/sprites/Enemies/MinerParts/MinerArm.png" id="10_07qad"]
+[ext_resource type="Texture2D" uid="uid://bxs1xlxnwi400" path="res://assets/sprites/Enemies/MinerParts/MinerBody.png" id="11_r1irm"]
+[ext_resource type="Texture2D" uid="uid://bwe4dxrlhcnqs" path="res://assets/sprites/Enemies/MinerParts/MinerHead.png" id="12_byhn5"]
+[ext_resource type="Texture2D" uid="uid://cjcuy1pdndl1w" path="res://assets/sprites/Enemies/MinerParts/MinerLeg2.png" id="13_vtsjb"]
+[ext_resource type="Texture2D" uid="uid://chk84f78q4niq" path="res://assets/sprites/Enemies/MinerParts/MinerLeg.png" id="14_qvpr0"]
+[ext_resource type="Texture2D" uid="uid://cmav1l40lr6xi" path="res://assets/sprites/Enemies/MinerParts/MinerPickaxe.png" id="15_a0ove"]
+[ext_resource type="Texture2D" uid="uid://b2xbsy0872b5i" path="res://assets/sprites/Enemies/MinerParts/MinerSunglasses.png" id="16_k6jh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeegf"]
-size = Vector2(584.5, 305)
+size = Vector2(1250.25, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0sa"]
+size = Vector2(32, 38)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_g20np")
 level_time = 10.0
 music = ExtResource("2_xsyib")
+unlock_gun = true
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-103, -471)
@@ -34,18 +49,42 @@ position = Vector2(947, 480)
 [node name="Enemy2" parent="Enemies" instance=ExtResource("2_f06ut")]
 position = Vector2(432, 352)
 
-[node name="LevelEnd" parent="." instance=ExtResource("5_txenv")]
-position = Vector2(1154, 1011)
+[node name="LevelEnd" type="Area2D" parent="."]
+position = Vector2(1093, 1015)
+collision_layer = 0
+script = ExtResource("5_jlvqr")
+death_sound = ExtResource("6_6m432")
 
-[node name="CollisionShape2D" parent="LevelEnd" index="0"]
-position = Vector2(185.25, -152)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(574.875, -147)
 shape = SubResource("RectangleShape2D_aeegf")
+debug_color = Color(0.620976, 0.529548, 0.19552, 0.42)
 
-[node name="Label" parent="LevelEnd" index="1"]
-visible = false
+[node name="Label" type="Label" parent="LevelEnd"]
+offset_left = -76.0
+offset_top = -186.0
+offset_right = 74.0
+offset_bottom = -58.0
+theme_override_font_sizes/font_size = 40
+text = "End of Level"
+autowrap_mode = 1
 
-[node name="Guy" parent="LevelEnd" index="2"]
-position = Vector2(-83, 291)
+[node name="Guy" type="Area2D" parent="LevelEnd"]
+position = Vector2(-22, 81)
 rotation = 1.5708
+collision_layer = 8
 
-[editable path="LevelEnd"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd/Guy"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_2f0sa")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelEnd/Guy"]
+texture = ExtResource("7_bubrj")
+
+[node name="Explodable" type="Node2D" parent="LevelEnd/Guy"]
+script = ExtResource("8_k5587")
+textures = Array[Texture2D]([ExtResource("9_l8jkk"), ExtResource("10_07qad"), ExtResource("11_r1irm"), ExtResource("12_byhn5"), ExtResource("13_vtsjb"), ExtResource("14_qvpr0"), ExtResource("15_a0ove"), ExtResource("16_k6jh5")])
+piece_count = 8
+
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
+[connection signal="body_entered" from="LevelEnd/Guy" to="LevelEnd" method="_on_guy_body_entered"]

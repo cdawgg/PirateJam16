@@ -5,7 +5,6 @@ var boulder: Boulder
 var camera: Camera
 
 @onready var levels: Array[PackedScene] = [
-	preload('res://scenes/test_level.tscn'),
 	preload('res://scenes/level1.tscn'),
 	preload('res://scenes/level2.tscn'),
 	preload('res://scenes/level3.tscn'),
@@ -65,7 +64,7 @@ func load_next_level():
 			# TODO: Play loser cutscene (await)
 			# await UILayer.play_video(load("path"))
 			# TODO: or if you wanna show a popup or something instead
-			# UILayer.show_the_thing()
+			UILayer.show_EndingLose()
 			UILayer.show_credits()
 		return
 	
