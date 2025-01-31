@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var screen_cover: ColorRect = $ScreenCover
 @onready var credits: Credits = $Credits
 @onready var settings: Settings = $Settings
+@onready var bad_ending: BadEnding = $BadEnding
 
 
 func _ready():
@@ -80,3 +81,7 @@ func show_settings(show: bool = true):
 func show_credits(show: bool = true):
 	SoundPlayer.play_music(load("res://assets/music/uh.ogg"))
 	credits.visible = show
+
+
+func show_bad_ending(show: bool = true):
+	bad_ending.visible = show

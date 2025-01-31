@@ -6,15 +6,13 @@ extends Control
 @onready var intro_video: VideoStream = preload("res://assets/Intro.ogv")
 @onready var intro_music: AudioStream = preload("res://assets/music/cave.ogg")
 
-const SKIP_CUTSCENE_DEBUG: bool = false
-
 
 func _ready():
 	SoundPlayer.play_music(menu_music)
 
 
 func _on_play_pressed():
-	if !SKIP_CUTSCENE_DEBUG:
+	if !GameState.skip_cutscene:
 		UILayer.fade_screen(3)
 		await SoundPlayer.fade_music(0, 4)
 		
