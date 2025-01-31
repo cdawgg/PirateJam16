@@ -14,16 +14,17 @@ func _ready():
 
 
 func _on_play_pressed():
-	hide()
 	if !SKIP_CUTSCENE_DEBUG:
 		UILayer.fade_screen(3)
 		await SoundPlayer.fade_music(0, 4)
 		
+		hide()
 		SoundPlayer.play_music(intro_music)
 		SoundPlayer.fade_music(1, 3, true)
 		UILayer.fade_screen(1.5, true)
 		await UILayer.play_video(intro_video)
 	
+	hide()
 	GameState.load_level(0)
 	UILayer.show_scoreboard()
 

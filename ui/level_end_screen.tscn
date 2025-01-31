@@ -1,7 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2iwfvnwdeu7e"]
+[gd_scene load_steps=13 format=3 uid="uid://c2iwfvnwdeu7e"]
 
 [ext_resource type="Theme" uid="uid://jbxh772s8h6f" path="res://assets/UI/theme_style.tres" id="1_8gxkg"]
 [ext_resource type="Script" path="res://ui/level_end_screen.gd" id="2_n5dmi"]
+[ext_resource type="Texture2D" uid="uid://cga8vu4gajhah" path="res://assets/sprites/UI/RETRY_spritesheet.png" id="3_86lnq"]
+[ext_resource type="Texture2D" uid="uid://dnp3w6khnllxt" path="res://assets/sprites/UI/RETRY_button.png" id="4_v2f21"]
+[ext_resource type="Texture2D" uid="uid://cpwv68at8ravo" path="res://assets/sprites/UI/NEXTLEVEL_spritesheet.png" id="5_sm31v"]
+[ext_resource type="Texture2D" uid="uid://d0qcye6iljc4r" path="res://assets/sprites/UI/NEXTLEVEL_button.png" id="6_ugl61"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3sru8"]
+texture = ExtResource("3_86lnq")
+region_rect = Rect2(0, 0, 63, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1baqx"]
+texture = ExtResource("3_86lnq")
+region_rect = Rect2(63, 0, 63, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2e5j"]
+texture = ExtResource("4_v2f21")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dffd4"]
+texture = ExtResource("5_sm31v")
+region_rect = Rect2(0, 0, 85, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr7yb"]
+texture = ExtResource("5_sm31v")
+region_rect = Rect2(85, 0, 85, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5nb57"]
+texture = ExtResource("6_ugl61")
 
 [node name="LevelEndScreen" type="Control"]
 layout_mode = 3
@@ -29,8 +55,8 @@ theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Level finished!"
+theme_override_font_sizes/font_size = 60
+text = "LEVEL FINISHED!"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
@@ -72,7 +98,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[right]99"
+text = "[right]99 / 99"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -102,14 +128,20 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(252, 80)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Retry"
+theme_override_styles/hover = SubResource("StyleBoxTexture_3sru8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1baqx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j2e5j")
 
 [node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(340, 80)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Next level"
+theme_override_styles/hover = SubResource("StyleBoxTexture_dffd4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fr7yb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5nb57")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]

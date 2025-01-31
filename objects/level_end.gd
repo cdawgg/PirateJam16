@@ -32,6 +32,8 @@ func _on_body_entered(body):
 
 func _on_guy_body_entered(body):
 	if body is Boulder:
+		if !wait_timer.is_stopped(): return
+		
 		SoundPlayer.play_sound(death_sound)
 		body.disable_input()
 		guy.hide()
