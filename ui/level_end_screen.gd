@@ -14,7 +14,7 @@ func _on_visibility_changed():
 	if !visible: return
 	
 	score_label.text = '[right]' + str(GameState.level_kill_count) + ' / ' + str(GameState.level.enemies.size())
-	kill_label.text = '[right]' + str(GameState.total_kill_count + GameState.level_kill_count)
+	kill_label.text = '[right]' + str(GameState.total_kill_count + GameState.level_kill_count) + ' / ' + str(GameState.max_kill_count + GameState.level.enemies.size())
 	time_label.text = '[right]' + UILayer.scoreboard.timer_label.text
 
 

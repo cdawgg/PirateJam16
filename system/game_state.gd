@@ -25,6 +25,8 @@ var max_kill_count: int = 0 # Potential of enemies killed in previous levels
 var gun_unlocked: bool = false
 var extra_jumps: int = 0
 
+var skip_cutscene: bool = false
+
 signal level_started
 
 
@@ -61,11 +63,7 @@ func load_next_level():
 			UILayer.play_video(load("res://assets/Outro.ogv"), true)
 			UILayer.show_credits()
 		else:
-			# TODO: Play loser cutscene (await)
-			# await UILayer.play_video(load("path"))
-			# TODO: or if you wanna show a popup or something instead
-			UILayer.show_EndingLose()
-			UILayer.show_credits()
+			UILayer.show_bad_ending()
 		return
 	
 	load_level(curr_level_index + 1)

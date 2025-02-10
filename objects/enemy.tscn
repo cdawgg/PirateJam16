@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://ba2knub037scs" path="res://assets/sfx/enemy/Ow.wav" id="9_lgl12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwob"]
-size = Vector2(10, 14)
+size = Vector2(20, 23)
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 8
@@ -25,7 +25,7 @@ sprites = Array[ExtResource("2_e4rrw")]([ExtResource("3_3feq7"), ExtResource("4_
 death_sounds = Array[AudioStream]([ExtResource("7_m1oyo"), ExtResource("8_7bx8a"), ExtResource("9_lgl12")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_bgwob")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

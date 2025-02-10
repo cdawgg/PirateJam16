@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://chdkg2yoebc7f"]
-
-[ext_resource type="Texture2D" uid="uid://bxfxvlwir0r4" path="res://assets/sprites/gameover.png" id="1_nfcjj"]
+[gd_scene format=3 uid="uid://chdkg2yoebc7f"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -24,18 +22,14 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(408.5, 82.5)
-scale = Vector2(3.05125, 3.22222)
-texture = ExtResource("1_nfcjj")
-
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "From Boulder to..."
+theme_override_font_sizes/font_size = 120
+text = "ERODED"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
+text = "Press R to roll again"
 horizontal_alignment = 1
