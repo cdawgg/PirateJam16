@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8tgpo5fupjiw"]
+[gd_scene load_steps=21 format=3 uid="uid://b8tgpo5fupjiw"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_7of42"]
+[ext_resource type="Shader" path="res://assets/UI/rainbow.gdshader" id="1_m2spa"]
 [ext_resource type="Texture2D" uid="uid://dowwccgi3805w" path="res://assets/sprites/UI/PLAY_Spritesheet.png" id="2_0t360"]
 [ext_resource type="Texture2D" uid="uid://ckyft8yb5w4yr" path="res://assets/sprites/Menu.png" id="2_n87p1"]
 [ext_resource type="Texture2D" uid="uid://c0wc66y7lmnoe" path="res://assets/sprites/UI/CREDITS_Spritesheet.png" id="2_ulhwh"]
@@ -8,6 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://dnpw8m11rtkbu" path="res://assets/sprites/UI/CREDITS_button.png" id="3_kpk7n"]
 [ext_resource type="Texture2D" uid="uid://bfslya4gs6sih" path="res://assets/sprites/UI/SETTINGS_Spritesheet.png" id="4_y0nw1"]
 [ext_resource type="Texture2D" uid="uid://ru5wrgyevn2w" path="res://assets/sprites/UI/SETTINGS_button.png" id="5_jlhp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8vmmw"]
+shader = ExtResource("1_m2spa")
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/angle = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jech"]
+shader = ExtResource("1_m2spa")
+shader_parameter/strength = 0.05
+shader_parameter/speed = 0.7
+shader_parameter/angle = 50.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_perkm"]
 texture = ExtResource("4_y0nw1")
@@ -43,6 +56,7 @@ region_rect = Rect2(63, 0, 63, 20)
 texture = ExtResource("3_kpk7n")
 
 [node name="MainMenu" type="Control"]
+material = SubResource("ShaderMaterial_8vmmw")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +66,7 @@ grow_vertical = 2
 script = ExtResource("1_7of42")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_6jech")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

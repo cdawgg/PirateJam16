@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2k1i2kibsrtv"]
 
 [ext_resource type="Script" path="res://scenes/text_box.gd" id="1_4fdr5"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_esput"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://dpv5b6y88arac" path="res://assets/sprites/UI/sign.popup.png" id="2_g6dfh"]
 
 [node name="TextBox" type="MarginContainer"]
 offset_right = 35.0
@@ -12,8 +10,8 @@ script = ExtResource("1_4fdr5")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_esput")
-region_rect = Rect2(8, 8, 16, 16)
+texture = ExtResource("2_g6dfh")
+region_rect = Rect2(0, 0, 96, 56)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -23,8 +21,10 @@ theme_override_constants/margin_right = 8
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true

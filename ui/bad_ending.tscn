@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv2g5q64wnkm4"]
+[gd_scene load_steps=15 format=3 uid="uid://dv2g5q64wnkm4"]
 
 [ext_resource type="Texture2D" uid="uid://bxfxvlwir0r4" path="res://assets/sprites/gameover.png" id="1_5a708"]
 [ext_resource type="Script" path="res://ui/bad_ending.gd" id="1_6ubf2"]
 [ext_resource type="Texture2D" uid="uid://cga8vu4gajhah" path="res://assets/sprites/UI/RETRY_spritesheet.png" id="2_xoydc"]
+[ext_resource type="Shader" path="res://assets/UI/shine.gdshader" id="3_kpira"]
 [ext_resource type="Texture2D" uid="uid://dnp3w6khnllxt" path="res://assets/sprites/UI/RETRY_button.png" id="3_yad3a"]
 [ext_resource type="Texture2D" uid="uid://c0wc66y7lmnoe" path="res://assets/sprites/UI/CREDITS_Spritesheet.png" id="5_bfsup"]
 [ext_resource type="Texture2D" uid="uid://dnpw8m11rtkbu" path="res://assets/sprites/UI/CREDITS_button.png" id="6_1ufv0"]
@@ -28,6 +29,22 @@ region_rect = Rect2(63, 0, 63, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8dc4"]
 texture = ExtResource("6_1ufv0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sw6bu"]
+shader = ExtResource("3_kpira")
+shader_parameter/angle = 0.87
+shader_parameter/position = 0.35
+shader_parameter/spread = 0.184
+shader_parameter/cutoff = 0.168
+shader_parameter/falloff = 0.93
+shader_parameter/edge_fade = 0.229
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 6.8
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.538
+shader_parameter/color = Color(0.842043, 0.627113, 0.53802, 0.905882)
+shader_parameter/hdr = false
+shader_parameter/seed = 1.0
 
 [node name="BadEnding" type="Control"]
 layout_mode = 3
@@ -128,6 +145,19 @@ size_flags_horizontal = 4
 theme_override_styles/hover = SubResource("StyleBoxTexture_odp3j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lj3tu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_c8dc4")
+
+[node name="Light" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sw6bu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5a708")
+stretch_mode = 4
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]

@@ -57,7 +57,7 @@ centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="Parallax"]
 scroll_scale = Vector2(0.5, 0.05)
-scroll_offset = Vector2(0, 450)
+scroll_offset = Vector2(0, 517)
 repeat_size = Vector2(480, 0)
 repeat_times = 4
 
@@ -68,6 +68,8 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -500)
 zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
+drag_right_margin = 0.0
 script = ExtResource("2_7yaab")
 
 [node name="Boulder" parent="." instance=ExtResource("1_vslfn")]

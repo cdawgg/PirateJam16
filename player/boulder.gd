@@ -1,7 +1,7 @@
 class_name Boulder
 extends RigidBody2D
 
-const MAX_SPEED: float = 2000
+const MAX_SPEED: float = 1000
 const JUMP_FORCE: float = 400
 const ACCEL_FORCE: float = 300
 const TORQUE_FORCE: float = 200
@@ -52,11 +52,10 @@ func _input(event):
 	
 	if event.is_action_pressed("jump"): #jump set to space bar
 		jump()
-	if event.is_action_pressed("action"): #action set to E, nothing set here yet
-		pass
+		
 	if event.is_action_pressed("fire_gun"):
 		gun.fire()
-
+		
 
 func _physics_process(delta):
 	horizontal_input = 0

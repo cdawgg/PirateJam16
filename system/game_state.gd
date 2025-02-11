@@ -25,7 +25,7 @@ var max_kill_count: int = 0 # Potential of enemies killed in previous levels
 var gun_unlocked: bool = false
 var extra_jumps: int = 0
 
-var skip_cutscene: bool = false
+var skip_cutscene: bool = false 
 
 signal level_started
 

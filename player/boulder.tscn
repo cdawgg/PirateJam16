@@ -5,11 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://pbqaguvkrpe3" path="res://assets/sfx/boulder/bounce_1.wav" id="2_y1pjx"]
 [ext_resource type="Script" path="res://player/gun.gd" id="3_bart6"]
 [ext_resource type="AudioStream" uid="uid://e7ekdl1yty4s" path="res://assets/sfx/boulder/bounce_2.wav" id="3_kh3ca"]
-[ext_resource type="Texture2D" uid="uid://dy556c6xdthor" path="res://assets/sprites/Upgrades/upgrade_cannon.png" id="4_f5loa"]
 [ext_resource type="AudioStream" uid="uid://db7jaklh5r2uj" path="res://assets/sfx/boulder/bounce_3.wav" id="4_i42ia"]
 [ext_resource type="PackedScene" uid="uid://dp6gx6hvcpa0g" path="res://objects/explodable.tscn" id="5_3nlx8"]
 [ext_resource type="AudioStream" uid="uid://bqodx8yit4o1u" path="res://assets/sfx/boulder/jump.wav" id="5_fawdd"]
 [ext_resource type="AudioStream" uid="uid://b2muxrpk6hhe4" path="res://assets/sfx/boulder/death.wav" id="5_phgb1"]
+[ext_resource type="Texture2D" uid="uid://cmvesp1x24x6g" path="res://assets/sprites/Upgrades/upgrade_cannon-Sheet.png" id="10_b6mly"]
 [ext_resource type="AudioStream" uid="uid://bn0oixtjsdgft" path="res://assets/sfx/boulder/scrape.wav" id="11_pd6md"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t5rw4"]
@@ -32,6 +32,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.993927, 0.209019, 0.157824, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_b8157"]
 resource_name = "fire"
@@ -42,10 +54,10 @@ tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.884903, 0.215742, 0.149856, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.884903, 0.215742, 0.149856, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -57,6 +69,18 @@ tracks/1/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6wpgw"]
@@ -89,7 +113,9 @@ script = ExtResource("3_bart6")
 modulate = Color(0.993927, 0.209019, 0.157824, 1)
 rotation = 1.5708
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_f5loa")
+texture = ExtResource("10_b6mly")
+offset = Vector2(0, -5)
+hframes = 7
 
 [node name="FirePoint" type="Marker2D" parent="Gun"]
 position = Vector2(24, 0)
