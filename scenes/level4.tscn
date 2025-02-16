@@ -10,42 +10,42 @@
 [ext_resource type="Script" path="res://objects/sign.gd" id="8_fbvfp"]
 [ext_resource type="Texture2D" uid="uid://sg55vwbc36sq" path="res://assets/sprites/Structures/StructuresTileset.png" id="9_rp20m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6vq2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22i36"]
 size = Vector2(20, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fnv5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy8lm"]
 size = Vector2(20, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8mn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q67u"]
 size = Vector2(20, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1c55"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb6ie"]
 size = Vector2(20, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxylf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4bbw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cqmi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_706i1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5lg8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgums"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdqql"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d84u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elias"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6c62"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_swhg0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r7xt"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3krpc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbpn5"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjoe8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po8gf"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgksu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fddhs"]
 size = Vector2(200, 84)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhtlq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oglrb"]
 size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_towt4"]
@@ -54,7 +54,7 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxqo3"]
 size = Vector2(80.9998, 91.4998)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drkcm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m0l5"]
 size = Vector2(300, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu5n6"]
@@ -258,7 +258,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone19"]
-shape = SubResource("RectangleShape2D_s6vq2")
+shape = SubResource("RectangleShape2D_22i36")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone22" type="Area2D" parent="."]
@@ -268,7 +268,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone22"]
-shape = SubResource("RectangleShape2D_5fnv5")
+shape = SubResource("RectangleShape2D_fy8lm")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone27" type="Area2D" parent="."]
@@ -278,7 +278,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone27"]
-shape = SubResource("RectangleShape2D_dp8mn")
+shape = SubResource("RectangleShape2D_8q67u")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone28" type="Area2D" parent="."]
@@ -288,7 +288,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone28"]
-shape = SubResource("RectangleShape2D_c1c55")
+shape = SubResource("RectangleShape2D_wb6ie")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone20" type="Area2D" parent="."]
@@ -298,7 +298,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone20"]
-shape = SubResource("RectangleShape2D_vxylf")
+shape = SubResource("RectangleShape2D_e4bbw")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone21" type="Area2D" parent="."]
@@ -308,7 +308,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone21"]
-shape = SubResource("RectangleShape2D_1cqmi")
+shape = SubResource("RectangleShape2D_706i1")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone25" type="Area2D" parent="."]
@@ -318,7 +318,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone25"]
-shape = SubResource("RectangleShape2D_y5lg8")
+shape = SubResource("RectangleShape2D_qgums")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone26" type="Area2D" parent="."]
@@ -328,7 +328,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone26"]
-shape = SubResource("RectangleShape2D_gdqql")
+shape = SubResource("RectangleShape2D_6d84u")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone2" type="Area2D" parent="."]
@@ -338,7 +338,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone2"]
-shape = SubResource("RectangleShape2D_elias")
+shape = SubResource("RectangleShape2D_x6c62")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone3" type="Area2D" parent="."]
@@ -348,7 +348,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone3"]
-shape = SubResource("RectangleShape2D_swhg0")
+shape = SubResource("RectangleShape2D_1r7xt")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone5" type="Area2D" parent="."]
@@ -357,7 +357,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone5"]
-shape = SubResource("RectangleShape2D_3krpc")
+shape = SubResource("RectangleShape2D_kbpn5")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone6" type="Area2D" parent="."]
@@ -367,7 +367,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone6"]
-shape = SubResource("RectangleShape2D_yjoe8")
+shape = SubResource("RectangleShape2D_po8gf")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone13" type="Area2D" parent="."]
@@ -377,7 +377,7 @@ collision_layer = 4
 script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone13"]
-shape = SubResource("RectangleShape2D_cgksu")
+shape = SubResource("RectangleShape2D_fddhs")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="DeathZone7" type="Area2D" parent="."]
@@ -388,7 +388,7 @@ script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone7"]
 position = Vector2(24, 399)
-shape = SubResource("RectangleShape2D_mhtlq")
+shape = SubResource("RectangleShape2D_oglrb")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone7"]
@@ -424,7 +424,7 @@ script = ExtResource("7_m23np")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone4"]
 position = Vector2(-23, -4)
-shape = SubResource("RectangleShape2D_drkcm")
+shape = SubResource("RectangleShape2D_4m0l5")
 debug_color = Color(0.75113, 0.458869, 5.77569e-07, 0.42)
 
 [node name="Sign" type="Area2D" parent="."]
